@@ -42,14 +42,8 @@ public class Ex2_if_else {
 		 * 변수 age에 나이를 대입하고 30세 이상이면 "드실만큼 드셨군요."를 출력 그렇지 않으면 "조금 더 드셔도 되겠어요."를 출력
 		 */
 		age = 27;
-
-		if (age >= 30) {
-			System.out.println("드실만큼 드셨군요.");
-		} else {
-			System.out.println("조금 더 드셔도 되겠어요.");
-		}
-		int age2 = 23;
-		System.out.println(age2 >= 30 ? "드실만큼 드셨군요." : "조금 더 드셔도 되겠어요.");
-
+		
+		System.out.println("나이 : " + age + "세");
+		System.out.println(age >= 30 ? "드실만큼 드셨군요." : "조금 더 드셔도 되겠어요.");
 	} // main
 }
