@@ -45,5 +45,12 @@ public class Ex2_if_else {
 		
 		System.out.println("나이 : " + age + "세");
 		System.out.println(age >= 30 ? "드실만큼 드셨군요." : "조금 더 드셔도 되겠어요.");
+		
+		age = 35;
+		
+		String res = age >= 30 ? "드실만큼 드셨군요." : "조금 더 드셔도 되겠어요.";
+		
+		System.out.println("나이 : " + age + "세");
+		System.out.println(res);
 	} // main
 }
