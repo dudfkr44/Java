@@ -15,11 +15,10 @@ public class Ex6_work {
 		int select = sc.nextInt();
 		int result = 0;
 
-		if( result > 30 || result < 0) {
+		if( select > 30 || select < 0) {
 			System.out.println("잘못 선택한 문항이 있습니다.");
 			return;
 		}
-		
 		System.out.println("--------------------------------------------");
 		
 		System.out.println("02 03 06 07 10 \n11 14 15 18 19 \n22 23 26 27 30");
