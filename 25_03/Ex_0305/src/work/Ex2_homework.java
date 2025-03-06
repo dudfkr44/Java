@@ -26,6 +26,6 @@ public class Ex2_homework {
 			System.out.println(i);
 			}// for
 		}//else
-
+		sc.close();
 	} // main
 }

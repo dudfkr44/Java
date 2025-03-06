@@ -24,6 +24,10 @@ public class Ex3_homework {
 			System.out.println();
 		}
 		
+		for(int i = a; i <= a; i++) {
+			
+		}
+		
 	} //main
 
 }

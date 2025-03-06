@@ -18,5 +18,6 @@ public class Ex2_break {
 			} //if
 			
 		} //while
+		sc.close();
 	} //main
 }
