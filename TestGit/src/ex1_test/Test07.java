@@ -16,6 +16,5 @@ public class Test07 {
 				break;
 			}// if
 		}// for
-		
 	} //main
 }
