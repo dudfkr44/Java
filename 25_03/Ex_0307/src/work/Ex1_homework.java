@@ -14,6 +14,7 @@ public class Ex1_homework {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("양의 정수: ");
 		int input = sc.nextInt();
+		sc.close();
 
 		if (input % 2 == 0 && input != 2 || input == 1) {
 			System.out.println(input + "은(는) 소수가 아닙니다.");
@@ -28,6 +29,5 @@ public class Ex1_homework {
 			System.out.println(input + "은(는) 소수입니다.");
 
 		}
-		sc.close();
 	} // main
 }

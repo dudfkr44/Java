@@ -9,6 +9,7 @@ public class Test07 {
 		int num1 = sc.nextInt();
 		System.out.print("수2 :");
 		int num2 = sc.nextInt();
+		sc.close();
 		
 		for(int i = 1; ;i++) {
 			if(i % num1 == 0 && i % num2 == 0) {

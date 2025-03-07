@@ -7,6 +7,7 @@ public class Test09 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("최대값 : ");
 		int input = sc.nextInt();
+		sc.close();
 		int i = 1;
 		int res = 0;
 
@@ -18,6 +19,6 @@ public class Test09 {
 		}
 
 		System.out.printf("1부터 %d까지의 숫자 중 홀수의 합산값은 %d입니다.", input, res);
-		sc.close();
+		
 	} // main
 }

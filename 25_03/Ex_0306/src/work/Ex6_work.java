@@ -17,6 +17,7 @@ public class Ex6_work {
 
 		if( select > 30 || select < 0) {
 			System.out.println("잘못 선택한 문항이 있습니다.");
+			sc.close();
 			return;
 		}
 		System.out.println("--------------------------------------------");
@@ -69,6 +70,7 @@ public class Ex6_work {
 			result += 2;
 		}
 		System.out.printf("생각한 숫자는 %d입니다.", result);
+		sc.close();
 		
 	} // main
 }
