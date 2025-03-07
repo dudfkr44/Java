@@ -10,6 +10,7 @@ public class Ex1_array {
 		int num2 = 200;
 		int num3 = 300;
 		int num4 = 400;
+		System.out.println(num1 + "\n" + num2 + "\n" + num3 + "\n" + num4);
 		System.out.println("----------------");
 
 //		1) 배열 선언
