@@ -5,9 +5,9 @@ import java.util.Random;
 public class Test11 {
 	public static void main(String[] args) {
 		int[] lotto = new int[6];// 정수형의 lotto라는 이름의 배열을 6개 만듬
-		for (int i = 0; i < lotto.length; i++) {// 조건 변수 i가 배열 변수 lotto 만큼 반복해서 집어넣게 설정
+		for (int i = 0; i < lotto.length; i++) {// 조건 변수 i가 배열 변수 lotto의 크기 만큼 반복해서 집어넣게 설정
 			int randomNum = 0;// 난수를 넣고 비교할 변수 설정
-			boolean isDuplicate; // 난수와 비교 숫자가 같을 참으로 기능 분산할 논리 연산자 설정
+			boolean isDuplicate; // 난수와 비교 숫자가 같을 경우와 다를 경우의 기능을 분산해서 처리할 논리 연산자 설정
 			do {
 				randomNum = new Random().nextInt(45) + 1;// 1부터 45까지의 난수 하나를 randomNum 변수에 넣음
 				isDuplicate = false;// false로 설정된 do의 부분 반복 실행
