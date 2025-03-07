@@ -10,7 +10,7 @@ public class Test11 {
 			boolean isDuplicate; // 난수와 비교 숫자가 같을 참으로 기능 분산할 논리 연산자 설정
 			do {
 				randomNum = new Random().nextInt(45) + 1;// 1부터 45까지의 난수 하나를 randomNum 변수에 넣음
-				isDuplicate = false;// false로 설정된 부분 반복 실행
+				isDuplicate = false;// false로 설정된 do의 부분 반복 실행
 				for (int j = 0; j < i; j++) {// 중복 숫자 판별해서 반복 실행할 for문
 					if (lotto[j] == randomNum) {// 반복해서 실행할 조건 숫자와 난수가 설정된 숫자가 같다면
 						isDuplicate = true;// 논리연산자를 true로 설정해 해당 반복 구간 건너뛰고 do 문을 빠져나오게 만듬
