@@ -26,6 +26,7 @@ public class Test13 {
 		int score = 0;
 		int sum = 0;
 		float avg = 0;
+		int cnt = 0;
 		
 		
 		for(int i = 0; i < student; i++) {
@@ -39,12 +40,11 @@ public class Test13 {
 		System.out.printf("평균 점수: %.1f\n", avg);
 		System.out.println("--- 평균 이상인 학생들 ---");
 		
-		int cnt = 0;
 		for(int i = 0; i < student; i++) {
-			if(score > avg) {
+			if(score >= avg) {
+				System.out.printf("----> 학생%d : %d점\n", i + 1, arr[i]);
 				cnt++;
 			}
-			System.out.printf("----> 학생%d : %d\n", i + 1, arr[i]);
 			
 		}
 		System.out.printf("성적이 평균값을 넘은 학생 수 : %d명", cnt);
