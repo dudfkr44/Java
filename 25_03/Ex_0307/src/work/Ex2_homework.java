@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Ex2_homework {
 	public static void main(String[] args) {
+		//Test12 코드도 같은 기능을 함.
 		int[] lotto = new int[6];// 정수형의 lotto라는 이름의 배열을 6개 만듬
 		for (int i = 0; i < lotto.length; i++) {// 조건 변수 i가 배열 변수 lotto 만큼 반복해서 집어넣게 설정
 			int randomNum = 0;// 난수를 넣고 비교할 변수 설정

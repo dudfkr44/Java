@@ -32,6 +32,21 @@ public class Test03 {
             // 줄바꿈
             System.out.println();
         }
+        
+        // 하단 역삼각형 부분
+        for (int line = number - 1; line >= 1; line--) {
+            // 공백 출력: number - line 개
+            for (int space = 1; space <= number - line; space++) {
+                System.out.print(" ");
+            }
+            // 별 출력: 2 * line - 1 개
+            for (int star = 1; star <= (2 * line - 1); star++) {
+                System.out.print("*");
+            }
+            // 줄바꿈
+            System.out.println();
+        }
+        
         sc.close();
     }
 }
