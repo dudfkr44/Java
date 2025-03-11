@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class Ex5_homework_exam {
 	public static void main(String[] args) {
+//		중복되지 않은 세자리의 숫자를 난수로 생성
+//		입력받은 세자리의 숫자 중 숫자와 자릿수가 같다면 Strike
+//		숫자는 같지만 자릿수가 다르다면 Ball
+//		모든 숫자가 맞으면 정답을 출력하고 입력을 시도한 숫자를 기입
+		
+		
+		
 		Scanner sc = new Scanner(System.in);
 		int[] com = new int[3];
 		int[] user = new int[3];

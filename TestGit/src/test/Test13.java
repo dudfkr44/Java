@@ -48,7 +48,7 @@ public class Test13 {
 			
 		}
 		System.out.printf("성적이 평균값을 넘은 학생 수 : %d명", cnt);
-		
+		sc.close();
 	}// main
 	
 	
