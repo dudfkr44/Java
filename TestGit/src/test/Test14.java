@@ -55,16 +55,17 @@ public class Test14 {
 					}
 				} // inner
 			} // outer
-			if(strike == 3) {
+			if (strike == 3) {
 				System.out.println(cnt + "회만에 정답!");
+				break;
 			} else {
-				if((0 < ball) || (0 < strike)) {
+				if ((0 < ball) || (0 < strike)) {
 					System.out.println(strike + " Strike " + ball + " Ball");
-				}
-				else {
+				} else {
 					System.out.println("Out!!");
 				}
 			}
 		}
+		sc.close();
 	} // main
 }
