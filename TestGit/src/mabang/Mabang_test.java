@@ -1,6 +1,6 @@
 package mabang;
 
-public class Mabang {
+public class Mabang_test {
 	public void getMabang(int size) {
 		int y = 0;
 		int x = size / 2;
