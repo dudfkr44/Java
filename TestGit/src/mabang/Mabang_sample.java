@@ -1,7 +1,8 @@
 package mabang;
 
-public class Mabang {
+public class Mabang_sample {
 	public void getMabang(int size) {
+
 		int y = 0;
 		int x = size / 2;
 		int[][] arr = new int[size][size];

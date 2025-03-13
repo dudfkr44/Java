@@ -25,8 +25,9 @@ public class MabangMain {
 			}
 		} while (size % 2 == 0 || size < 1);
 
-		Mabang mabang = new Mabang();
+		Mabang_sample mabang = new Mabang_sample();
 		mabang.getMabang(size);
+		
 
 		// 명시적으로 Scanner 닫기
 		sc.close();
