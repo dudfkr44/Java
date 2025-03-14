@@ -1,4 +1,4 @@
-package atm;
+package atm_sample;
 
 import java.util.Scanner;
 

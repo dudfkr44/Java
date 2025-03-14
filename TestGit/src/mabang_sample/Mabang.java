@@ -19,7 +19,6 @@ public class Mabang {
 			if (y < 0) {
 				y = size - 1;
 			}
-
 			if (x == size) {
 				x -= size;
 			}

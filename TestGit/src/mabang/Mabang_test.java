@@ -4,11 +4,12 @@ public class Mabang_test {
 	public void getMabang(int size) {
 		int y = 0;
 		int x = size / 2;
-		int[][] arr = new int[size][size];
 		int num = 1;
+		int[][] arr = new int[size][size];
 
 		while (num <= size * size) {
 			arr[y][x] = num;
+
 			if (num % size == 0) {
 				y++;
 			} else {
@@ -29,9 +30,9 @@ public class Mabang_test {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 				System.out.printf("%02d ", arr[i][j]);
-			}
+			} // inner
 			System.out.println();
-		}
+		} // outer
 
-	}
+	}// getmabang
 }

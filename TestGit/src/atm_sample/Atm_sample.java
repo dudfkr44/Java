@@ -1,12 +1,12 @@
-package atm;
+package atm_sample;
 
 import java.util.Scanner;
 
 public class Atm_sample {
 	Scanner sc = new Scanner(System.in);
-	private int money;
+	private int money = 0;
 
-	public void atmPrint(int check) {
+	public void atmPrint(int choice) {
 		System.out.print("1.입    금 :\r\n");
 		System.out.print("2.출    금 :\r\n");
 		System.out.print("3.잔액 확인 :\r\n");
