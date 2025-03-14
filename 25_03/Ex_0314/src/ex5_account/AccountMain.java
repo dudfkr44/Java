@@ -23,7 +23,7 @@ public class AccountMain {
 		Scanner sc = new Scanner(System.in);
 		int choice = 0;
 
-		do {
+		while (choice <= 3 || choice >= 1) {
 			atm.acMain(choice);
 			choice = sc.nextInt();
 			switch (choice) {
@@ -40,7 +40,7 @@ public class AccountMain {
 				System.out.print("이용해 주셔서 감사합니다.");
 				return;
 			}
-		} while (choice <= 3 || choice >= 1);
+		}
 		sc.close();
 	} // main
 

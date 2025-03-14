@@ -8,15 +8,13 @@ public class SquareMain {
 		Scanner sc = new Scanner(System.in);
 		Square sq = new Square();
 		int size = sq.getSizeCheck(sc);
-		int[][] res = sq.square(size);
-
+		int[][] arr = sq.square(size);
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				System.out.printf("%02d ", res[i][j]);
+				System.out.printf("%02d ", arr[i][j]);
 			} // inner
 			System.out.println();
 		} // outer
-		sc.close();
 
 	} // main
 
