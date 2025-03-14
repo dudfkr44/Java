@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class SquareMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Square m = new Square();
 
 		// Square 클래스에서 입력 처리
-		int size = Square.getSizeCheck(sc);
+		int size = m.getSizeCheck(sc);
 
 		// 마방진 생성 및 출력
-		Square m = new Square();
 		int[][] res = m.mabang(size);
 
 		System.out.println("\n[마방진 결과]");

@@ -1,21 +1,21 @@
-package ex3_square;
+package ex4_square_exam;
 
 import java.util.Scanner;
 
 public class Square {
-	// 입력 검증 메서드
+
 	public int getSizeCheck(Scanner sc) {
 		int size;
 		while (true) {
-			System.out.print("마방진 크기 : ");
+			System.out.print("마방진의 크기: ");
 			if (!sc.hasNextInt()) {
 				System.out.println("숫자를 입력하세요.");
 				sc.next();
 				continue;
 			}
 			size = sc.nextInt();
-			if (size <= 1 || size % 2 == 0) {
-				System.out.println("1보다 큰 홀수를 입력하세요.");
+			if (size % 2 == 0 || size <= 1) {
+				System.out.println("1보다 큰 홀수여야 합니다.");
 			} else {
 				break;
 			}
@@ -23,12 +23,11 @@ public class Square {
 		return size;
 	} // getSizeCheck
 
-	// 마방진 생성 메서드
-	public int[][] mabang(int size) {
+	public int[][] square(int size) {
 		int y = 0;
 		int x = size / 2;
-		int[][] arr = new int[size][size];
 		int num = 1;
+		int[][] arr = new int[size][size];
 
 		while (num <= size * size) {
 			arr[y][x] = num;
@@ -39,13 +38,17 @@ public class Square {
 				x++;
 			}
 
-			if (y < 0)
-				y = size - 1;
-			if (x >= size)
-				x = 0;
-
+			if (y < 0) {
+				y += size;
+			}
+			if (x == size) {
+				x -= size;
+			}
 			++num;
 		}
+
 		return arr;
-	} // mabang
+
+	} // square
+
 }
