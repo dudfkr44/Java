@@ -14,7 +14,7 @@ public class AbsMain {
 			public void setValue(int n) {
 				
 			}
-		}
+		};
 		
 	} // main
 }
