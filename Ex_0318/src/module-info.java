@@ -1,2 +1,2 @@
-module Ex_0318_1 {
+module Ex_0318 {
 }
