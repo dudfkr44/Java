@@ -53,7 +53,7 @@ public class Quiz {
 
 		System.out.println("5개의 정답을 모두 맞추셨습니다!");
 		System.out.printf("결과 : %d초", time.getTime());
-		
+
 		sc.close();
 
 	} // main
