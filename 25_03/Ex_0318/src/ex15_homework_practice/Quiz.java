@@ -29,16 +29,30 @@ public class Quiz {
 
 			}
 
-			sum = num1 + num2;
-			mul = num1 * num2;
-
 			if (num1 < num2) {
 				int temp = num1;
 				num1 = num2;
 				num2 = temp;
 			}
-			sub = num1 - num2;
-			div = num1 / num2;
+			for (int i = 0; i < op.length; i++)
+				switch (op[i]) {
+				case 1:
+					sum = num1 + num2;
+					break;
+				case 2:
+					sub = num1 - num2;
+					break;
+				case 3:
+					mul = num1 * num2;
+					break;
+				case 4:
+					div = num1 / num2;
+					break;
+				default
+					
+					break;
+				}
+		}
 
 			try {
 				System.out.printf("%d + %d = ", num1, num2);
@@ -61,8 +75,5 @@ public class Quiz {
 			}
 		}
 
-		System.out.printf("축하합니다. %d개의 모든 문제를 푸셨습니다.\n", correctCount);
-		System.out.printf("결과 : %d초", time.getTime());
-		sc.close();
-	}
-}
+	System.out.printf("축하합니다. %d개의 모든 문제를 푸셨습니다.\n",correctCount);System.out.printf("결과 : %d초",time.getTime());sc.close();
+}}
