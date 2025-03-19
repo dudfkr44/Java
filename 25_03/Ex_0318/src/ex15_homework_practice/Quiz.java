@@ -16,7 +16,7 @@ public class Quiz {
 		int correctCount = 0;
 		String input = "";
 		int answer = 0;
-		char[] op = {'+', '-', '*', '/'};
+		char[] op = { '+', '-', '*', '/' };
 
 		TimeCount time = new TimeCount();
 		time.setDaemon(true);
@@ -26,12 +26,9 @@ public class Quiz {
 			num1 = rnd.nextInt(100) + 1;
 			num2 = rnd.nextInt(100) + 1;
 			for (int i = 0; i < op.length; i++) {
-				i
-				
+
 			}
-			
-			
-			
+
 			sum = num1 + num2;
 			mul = num1 * num2;
 
