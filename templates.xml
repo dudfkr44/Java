@@ -180,7 +180,10 @@ ${link}.addSelectionListener(new SelectionAdapter() {
 				${listener:link('')}
 			}
 		});
-${imp:import(org.eclipse.swt.SWT, org.eclipse.swt.events.SelectionAdapter, org.eclipse.swt.events.SelectionEvent)}${cursor}</template><template autoinsert="false" context="swt-statements" deleted="false" description="new List" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.list" name="List">${type:newType(org.eclipse.swt.widgets.List)} ${list:newName(org.eclipse.swt.widgets.List)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link('SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.MULTI | SWT.V_SCROLL', SWT.MULTI, 'SWT.SINGLE | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.SINGLE | SWT.V_SCROLL', SWT.SINGLE)});
+${imp:import(org.eclipse.swt.SWT, org.eclipse.swt.events.SelectionAdapter, org.eclipse.swt.events.SelectionEvent)}${cursor}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="al">List&lt;${var}&gt; list = new ArrayList&lt;${var}&gt;();${:import(java.util.List, java.util.ArrayList)}&#13;
+${cursor}&#13;
+&#13;
+</template><template autoinsert="false" context="swt-statements" deleted="false" description="new List" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.list" name="List">${type:newType(org.eclipse.swt.widgets.List)} ${list:newName(org.eclipse.swt.widgets.List)}= new ${type}(${parent:var(org.eclipse.swt.widgets.Composite)}, ${style:link('SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.MULTI | SWT.V_SCROLL', SWT.MULTI, 'SWT.SINGLE | SWT.V_SCROLL | SWT.H_SCROLL', 'SWT.SINGLE | SWT.V_SCROLL', SWT.SINGLE)});
 ${list}.setLayoutData(new ${gridDataType:newType(org.eclipse.swt.layout.GridData)}(SWT.${horizontal:link(FILL, BEGINNING, CENTER, END)}, SWT.${vertical:link(FILL, TOP, CENTER, BOTTOM)}, ${hex:link(true, false)}, ${vex:link(true, false)}));
 ${list}.setItems(${word_selection}${});
 ${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="false" context="java-statements" deleted="false" description="explicit lock acquisition" enabled="true" id="org.eclipse.jdt.ui.templates.lock" name="lock">${lock:var(java.util.concurrent.locks.Lock)}.lock();
@@ -189,7 +192,9 @@ try {
 } finally {
 	${lock}.unlock();
 }</template><template autoinsert="false" context="java-members" deleted="false" description="main method" enabled="true" id="org.eclipse.jdt.ui.templates.main" name="main">public static void main(String[] args) {
+
 	${cursor}
+
 } // main</template><template autoinsert="false" context="swt-statements" deleted="false" description="new top level Shell with event loop" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.swt.mainloop" name="mainloop">${displayType:newType(org.eclipse.swt.widgets.Display)} ${display:newName(org.eclipse.swt.widgets.Display)} = new ${displayType}();
 ${shellType:newType(org.eclipse.swt.widgets.Shell)} ${shell:newName(org.eclipse.swt.widgets.Shell)} = new ${shellType}(${display});
 ${shell}.setLayout(new ${layoutType:newType(org.eclipse.swt.layout.GridLayout)}(${numberColumns:link(1, 2, 3, 4, 5)}, ${equalColumns:link(false, true)}));
@@ -227,15 +232,16 @@ ${cursor}</template><template autoinsert="true" context="javadoc" deleted="false
 	${cursor}&#13;
 }</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="outer">// outer</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="print">System.out.print(${word_selection}${});${cursor}</template><template autoinsert="false" context="java-members" deleted="false" description="private method" enabled="true" id="org.eclipse.jdt.ui.templates.private_method" name="private_method">private ${void} ${name}(${}) {
 	${cursor}
-}</template><template autoinsert="false" context="java-members" deleted="false" description="private static method" enabled="true" id="org.eclipse.jdt.ui.templates.private_static_method" name="private_static_method">private static ${void} ${name}(${}) {
+} // ${name}</template><template autoinsert="false" context="java-members" deleted="false" description="private static method" enabled="true" id="org.eclipse.jdt.ui.templates.private_static_method" name="private_static_method">private static ${void} ${name}(${}) {
 	${cursor}
-}</template><template autoinsert="false" context="java-members" deleted="false" description="protected method" enabled="true" id="org.eclipse.jdt.ui.templates.protected_method" name="protected_method">protected ${void} ${name}(${}) {
+} // ${name}</template><template autoinsert="false" context="java-members" deleted="false" description="protected method" enabled="true" id="org.eclipse.jdt.ui.templates.protected_method" name="protected_method">protected ${void} ${name}(${}) {
 	${cursor}
-}</template><template autoinsert="false" context="java-members" deleted="false" description="public method" enabled="true" id="org.eclipse.jdt.ui.templates.public_method" name="public_method">public ${void} ${name}(${}) {
+} // ${name}</template><template autoinsert="false" context="java-members" deleted="false" description="public method" enabled="true" id="org.eclipse.jdt.ui.templates.public_method" name="public_method">public ${void} ${name}(${}) {
 	${cursor}
 } // ${name}</template><template autoinsert="false" context="java-members" deleted="false" description="public static method" enabled="true" id="org.eclipse.jdt.ui.templates.public_static_method" name="public_static_method">public static ${void} ${name}(${}) {
 	${cursor}
-}</template><template autoinsert="false" context="java" deleted="false" description="runnable" enabled="true" id="org.eclipse.jdt.ui.templates.runnable" name="runnable">new Runnable() {
+} // ${name}</template><template autoinsert="true" context="java" deleted="false" description="" enabled="true" name="ran">Random ran = new Random();${:import(java.util.Random)}&#13;
+${cursor}</template><template autoinsert="false" context="java" deleted="false" description="runnable" enabled="true" id="org.eclipse.jdt.ui.templates.runnable" name="runnable">new Runnable() {
 	public void run() {
 		${line_selection}
 	}
@@ -370,13 +376,13 @@ ${imp:import(org.eclipse.swt.SWT)}${cursor}</template><template autoinsert="true
 ${cursor}</template><template autoinsert="true" context="postfix" deleted="false" description="Creates a new variable" enabled="true" id="org.eclipse.jdt.postfixcompletion.var" name="var">${field:newType(inner_expression)} ${var:newName(inner_expression)} = ${inner_expression};${cursor}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate with enumeration" enabled="false" id="org.eclipse.jdt.ui.templates.while_enumeration" name="while">while (${en:var(java.util.Enumeration)}.hasMoreElements()) {
 	${type:argType(en)} ${elem:newName(type)} = (${type}) ${en}.nextElement();
 	${cursor}
-}</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate with iterator" enabled="false" id="org.eclipse.jdt.ui.templates.while_iterator" name="while">while (${it:var(java.util.Iterator)}.hasNext()) {
+} // while</template><template autoinsert="false" context="java-statements" deleted="false" description="iterate with iterator" enabled="false" id="org.eclipse.jdt.ui.templates.while_iterator" name="while">while (${it:var(java.util.Iterator)}.hasNext()) {
 	${type:argType(it)} ${elem:newName(type)} = (${type}) ${it}.next();
 	${cursor}
 }</template><template autoinsert="false" context="java-statements" deleted="false" description="while loop with condition" enabled="true" id="org.eclipse.jdt.ui.templates.while_condition" name="while">while (${condition:var(boolean)}) {
 	${line_selection}${cursor}
-}</template><template autoinsert="true" context="postfix" deleted="false" description="Creates a while loop" enabled="true" id="org.eclipse.jdt.postfixcompletion.while" name="while">while (${i:inner_expression(boolean)}) {&#13;
+} // while</template><template autoinsert="true" context="postfix" deleted="false" description="Creates a while loop" enabled="true" id="org.eclipse.jdt.postfixcompletion.while" name="while">while (${i:inner_expression(boolean)}) {&#13;
 	${cursor}&#13;
-}</template><template autoinsert="true" context="postfix" deleted="false" description="Creates an if statement which checks if a given numeric variable is within a region" enabled="true" id="org.eclipse.jdt.postfixcompletion.withinregion" name="withinregion">if (${i:inner_expression(float,int,double,long)} &gt;= ${lower_bound} &amp;&amp; ${inner_expression} &lt;= ${upper_bound}) {&#13;
+} // while</template><template autoinsert="true" context="postfix" deleted="false" description="Creates an if statement which checks if a given numeric variable is within a region" enabled="true" id="org.eclipse.jdt.postfixcompletion.withinregion" name="withinregion">if (${i:inner_expression(float,int,double,long)} &gt;= ${lower_bound} &amp;&amp; ${inner_expression} &lt;= ${upper_bound}) {&#13;
 	${cursor}&#13;
 }</template></templates>
