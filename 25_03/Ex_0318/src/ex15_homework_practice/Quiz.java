@@ -22,37 +22,10 @@ public class Quiz {
 		time.setDaemon(true);
 		time.start();
 
+		num1 = rnd.nextInt(100) + 1;
+		num2 = rnd.nextInt(100) + 1;
+
 		while (true) {
-			num1 = rnd.nextInt(100) + 1;
-			num2 = rnd.nextInt(100) + 1;
-			for (int i = 0; i < op.length; i++) {
-
-			}
-
-			if (num1 < num2) {
-				int temp = num1;
-				num1 = num2;
-				num2 = temp;
-			}
-			for (int i = 0; i < op.length; i++)
-				switch (op[i]) {
-				case 1:
-					sum = num1 + num2;
-					break;
-				case 2:
-					sub = num1 - num2;
-					break;
-				case 3:
-					mul = num1 * num2;
-					break;
-				case 4:
-					div = num1 / num2;
-					break;
-				default
-					
-					break;
-				}
-		}
 
 			try {
 				System.out.printf("%d + %d = ", num1, num2);
@@ -60,7 +33,6 @@ public class Quiz {
 				answer = Integer.parseInt(input);
 			} catch (NumberFormatException e) {
 				System.out.println("정수를 입력하세요.");
-				continue;
 			}
 
 			if (answer == sum) {
@@ -73,7 +45,10 @@ public class Quiz {
 			} else {
 				System.out.println("오답");
 			}
-		}
 
-	System.out.printf("축하합니다. %d개의 모든 문제를 푸셨습니다.\n",correctCount);System.out.printf("결과 : %d초",time.getTime());sc.close();
-}}
+		} // while
+		System.out.printf("축하합니다. %d개의 모든 문제를 푸셨습니다.\n", correctCount);
+		System.out.printf("결과 : %d초", time.getTime());
+		sc.close();
+	}
+}
