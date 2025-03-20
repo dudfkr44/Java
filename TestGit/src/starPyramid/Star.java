@@ -20,7 +20,7 @@ public class Star {
 			}
 		}
 
-		for (int i = 0; i <= h; i++) {
+		for (int i = 1; i <= h; i++) {
 			for (int j = 0; j < h - i; j++) {
 				System.out.print(" ");
 			} // inner
