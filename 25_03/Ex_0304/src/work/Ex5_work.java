@@ -17,6 +17,7 @@ public class Ex5_work {
 			result += i; // i의 값을 result에 누적 합산
 		} // for
 		System.out.print("1부터 n까지의 합: " + result);// 결과값 result를 표시
+		sc.close();
 
 	}// main
 }

@@ -1,56 +1,64 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class Test18 {
-//	숫자를 입력하세요.(입력 종료 : 0)
-//	45
-//	17
-//	20
-//	21
-//	0
-//	원하는 숫자 범위를 입력하세요.
-//	시작 : 15
-//	끝 : 20
-//	범위 내의 숫자들
-//	17 20
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		List<Integer> arr = new ArrayList<Integer>();
 
-		System.out.println("숫자를 입력하세요.(입력 종료 : 0)");
+//		exam.txt의 내용을 읽어서 숫자들의 합만 출력
 
-		while (true) {
-			int n = sc.nextInt();
-			System.out.print("입력 : ");
-			if (n == 0) {
-				break;
+		String path = "C:\\Users\\user1\\git\\Java\\exam.txt";
+
+		File f = new File(path);
+
+		byte[] read = new byte[(int) f.length()];
+
+		FileInputStream fis = null;
+
+		if (f.exists()) {
+			try {
+				fis = new FileInputStream(f);
+				int sum = 0;
+//				fis.read(read);
+//				String str = new String(read);
+//				for (int i = 0; i < str.length(); i++) {
+//					char c = str.charAt(i);
+//					if (c >= '0' && c <= '9') { // 조건식 수정
+//						sum += (c - '0');
+//						// 또는: sum += Integer.parseInt(Character.toString(c)); // 복잡한 방법
+//					}
+//				} // for
+
+				int code = 0;
+				while (((code = fis.read()) != -1)) {
+					// str = "" + (char) code;
+					String s = String.valueOf((char) code);
+					try {
+						sum += Integer.parseInt(s);
+					} catch (Exception e) {
+
+					}
+				}
+
+				System.out.printf("각 숫자들의 합 : %d\n", sum);
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
-			arr.add(n);
-		} // while
-		
-		int max = sc.nextInt();
-		int min = sc.nextInt();
-		
-		if(min > max) {
-			int temp = max;
-			max = min;
-			min = temp;
-		}
-			
-			
-			
-		
-
-		for (int result : arr) {
-			if(result <= max && result >= min) {
-				
-			}
-
-		}
+		} else {// if-else
+			System.out.println("파일이 존재하지 않습니다.");
+		} // else
 
 	} // main
 }

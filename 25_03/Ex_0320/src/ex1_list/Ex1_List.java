@@ -31,11 +31,14 @@ public class Ex1_List {
 			list.add(input);
 		}
 
+		
 		System.out.println("원하는 숫자 범위를 입력하세요.");
 		System.out.print("시작 : ");
 		int num1 = sc.nextInt();
 		System.out.print("끝 : ");
 		int num2 = sc.nextInt();
+		
+		
 
 		if (num1 > num2) {
 			int temp = num1;
@@ -50,15 +53,15 @@ public class Ex1_List {
 //				continue;
 //			}
 
-		for (int num : result)
+		// 불필요한 박싱 방지 (int 사용)
+		for (int num : list) { // Integer → int
 			if (num >= num1 && num <= num2) {
-				System.out.print(num + " ");
-			} else {
-				continue;
+				result.add(num);
 			}
+		}
 
-		sc.close();
 		System.out.println("범위 내의 숫자들\n" + result);
+		sc.close();
 
 	} // main
 }
