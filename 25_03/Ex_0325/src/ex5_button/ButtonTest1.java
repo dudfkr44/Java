@@ -13,7 +13,7 @@ public class ButtonTest1 {
 		// f.setLocation(300, 200);
 		f.setBounds(400, 400, 400, 200); // 창의 크기 Size와 Location의 설정을 한 번에 지정(x, y, 높이, 너비)
 		
-		//프레임의 자동배치를 비홣성
+		//프레임의 자동배치를 비활성
 		f.setLayout(null);
 
 		// 버튼 생성

@@ -1,6 +1,5 @@
 package ex3_frame;
 
-import java.awt.Color;
 import java.awt.Frame;
 
 public class Ex_Frame {
@@ -11,8 +10,6 @@ public class Ex_Frame {
 		f.setLocation(300, 200);
 		f.addWindowListener(new WinClosingListener());
 		f.setVisible(true);
-		
-		
 
 	} // main
 }
