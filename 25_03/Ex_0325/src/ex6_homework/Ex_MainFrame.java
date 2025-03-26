@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Ex_MainFrame {
-    private static Calculator calculator = new Calculator(); // Calculator 인스턴스
+    private static Calculator calculator = new Calculator(); // Calculator 클래스 인스턴스화 및 메모리 선언
     private static Label display; // 계산 결과 표시 라벨
 
     public static void main(String[] args) {
@@ -132,7 +132,7 @@ public class Ex_MainFrame {
 		frameMain.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				System.exit(0); // 프로그램 종료
+				new ButtonExitPopUp();// 프로그램 종료
 			}
 		});
 	}
