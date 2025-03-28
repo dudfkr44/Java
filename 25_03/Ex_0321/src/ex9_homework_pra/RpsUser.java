@@ -1,8 +1,6 @@
 package ex9_homework_pra;
 
-import java.io.Serializable;
-
-public class RpsUser implements Serializable {
+public class RpsUser {
 	private String id;
 	private int win;
 	private int lose;

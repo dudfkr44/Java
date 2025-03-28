@@ -14,6 +14,7 @@ public class Ex_Writer {
 		try {
 
 			fw = new FileWriter(f);
+			
 
 			String str = "나는 FileWriter의 예제입니다.\n두 줄도 쓸 수 있어.";
 			fw.write(str);

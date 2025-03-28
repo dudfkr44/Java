@@ -35,7 +35,8 @@ public class RpsMain {
 		String[] rpsImg = { "r", "p", "s" }; // 가위, 바위, 보의 이미지 이름 뒷글자 배열 생성
 
 		// 이미지 배열 초기화
-		// createImageArray() 메서드로 사용자(u)와 컴퓨터(c)파일 이름 설정
+		// createImageArray() 메서드로 사용자(u)와 컴퓨터(c)파일 이름 설정 후
+		// uImages, cImages 배열에 해당 파일의 그림을 저장
 		ImageIcon[] uImages = createImageArray("u", rpsImg);
 		ImageIcon[] cImages = createImageArray("c", rpsImg);
 
@@ -79,30 +80,41 @@ public class RpsMain {
 		setLabelColor(lbScore, Color.WHITE); // setLabelColor - 레이블에 출력하는 문자열의 색상 설정
 
 		// 애니메이션이 갱신될 타이머 설정
-		Timer timer = new Timer(100, new ActionListener() { // 0.1초의 딜레이를 가진 감지자 설정
+		// Timer 클래스의 timer로 메모리 선언 후 0.1초의 딜레이를 가진 감지자 설정
+		Timer timer = new Timer(100, new ActionListener() {
 			int state = 1; // 이미지를 갱신할 순번 초기화
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (userChoice == -1) { // userchoice의 변수값이 맨처음 지정된 -1일일 경우
-					// 정적 메서드 animateImages()의 상태값, 가위 바위 보 이미지 등의 결과값을 state 변수에 대입
+					// 정적 메서드 animateImages()의 파라미터인 state, 가위 바위 보 이미지 등의 결과값을 state 변수에 대입
+					// 파라미터: lbUImg, lbCImg(이미지 레이블), lbResult(결과 표시 레이블), timer(애니메이션 제어 타이머)
 					state = animateImages(state, lbUImg, lbCImg, uImages, cImages);
 					gameFrame.repaint(); // 프레임에 나타날 이미지 갱신
 				}
 			}
 		});
-		timer.start();
+		timer.start(); // 타이머 클래스의 기능이 할당된 timer 변수를 실행
 
 		// 다시하기 버튼
-		JButton btnRestart = new JButton("다시하기");
-		btnRestart.setBounds(275, 760, 150, 50);
-		setButtonFont(btnRestart, buttonFont);
+		JButton btnRestart = new JButton("다시하기"); // 다시하기 버튼 설정
+		btnRestart.setBounds(275, 760, 150, 50); // 다시하기 버튼 위치 및 크기 설정
+		setButtonFont(btnRestart, buttonFont); // 다시하기 버튼의 폰트 적용
+
+		// "다시하기" 버튼 클릭 시 게임을 초기 상태로 재설정하는 이벤트 리스너 등록
+		// resetGame 메서드는 다음과 같은 작업을 수행:
+		// - 사용자/컴퓨터 선택 변수 초기화 (userChoice, computerChoice = -1)
+		// - 사용자/컴퓨터 이미지 레이블을 기본 이미지(바위)로 재설정
+		// - 결과 메시지("가위 바위 보")로 복원
+		// - 애니메이션 타이머 재시작
+		// 파라미터: lbUImg, lbCImg(이미지 레이블), lbResult(결과 표시 레이블), timer(애니메이션 제어 타이머)
 		btnRestart.addActionListener(e -> resetGame(lbUImg, lbCImg, lbResult, timer));
 
 		// 프레임에 추가할 객체 컴포넌트 추가
 		gameFrame.add(lbUImg);
 		gameFrame.add(lbVsImg);
 		gameFrame.add(lbCImg);
+		// 향상된 for문을 이용해 각 버튼의 배열값을 배열 순서에 따른 btn 변수 위치로 전부 할당
 		for (JButton btn : buttons) {
 			gameFrame.add(btn);
 		}
@@ -121,8 +133,12 @@ public class RpsMain {
 		});
 
 		// 버튼 이벤트 설정
+		// 가위 바위 보의 해당하는 buttons 변수의 배열값에 각각 정해진 인자에 맞는 버튼 이벤트를 할당
+		// 바위 버튼
 		buttons[0].addActionListener(new RpsActionListener(0, lbUImg, lbCImg, lbResult, lbScore, timer));
+		// 보 버튼
 		buttons[1].addActionListener(new RpsActionListener(1, lbUImg, lbCImg, lbResult, lbScore, timer));
+		// 가위 버튼
 		buttons[2].addActionListener(new RpsActionListener(2, lbUImg, lbCImg, lbResult, lbScore, timer));
 	} // main
 
@@ -147,6 +163,7 @@ public class RpsMain {
 
 	// 이미지 배열 생성 메서드
 	private static ImageIcon[] createImageArray(String prefix, String[] rpsImg) {
+		// 이미지 아이콘 클래스 형태의 images 경로를 저장할 image 배열값 할당
 		ImageIcon[] images = new ImageIcon[3];
 		for (int i = 0; i < 3; i++) {
 			String filename = "images/" + prefix + rpsImg[i] + ".png";
@@ -165,13 +182,13 @@ public class RpsMain {
 		label.setForeground(color);
 	}
 
-	// 애니메이션 로직 메서드
-	private static int animateImages(int currentState, JLabel lbUImg, JLabel lbCImg, ImageIcon[] uImages,
+	// 그림 애니메이션으로 구현 메서드
+	private static int animateImages(int state, JLabel lbUImg, JLabel lbCImg, ImageIcon[] uImages,
 			ImageIcon[] cImages) {
-		int index = (currentState - 1) % 3;
+		int index = (state - 1) % 3;
 		lbUImg.setIcon(uImages[index]);
 		lbCImg.setIcon(cImages[index]);
-		return (currentState % 3) + 1;
+		return (state % 3) + 1;
 	}
 
 	// 초기화 메서드
@@ -180,7 +197,7 @@ public class RpsMain {
 		computerChoice = -1;
 		lbUImg.setIcon(createImageIcon("u", 0)); // 바위로 초기화
 		lbCImg.setIcon(createImageIcon("c", 0)); // 바위로 초기화
-		lbResult.setText("가위 바위 보");
+		lbResult.setText("가위 바위 보"); // 결과 기록창에 처음 및 다시하기 버튼 누를 시 표시될 문자열 설정
 		timer.start();
 	}
 
@@ -189,7 +206,7 @@ public class RpsMain {
 		return new ImageIcon("images/" + prefix + getRpsImgName(choice) + ".png");
 	}
 
-	// 이미지 파일명 생성 메서드 (r, p, s 변환)
+	// 이미지 두번째 자리의 파일명 생성 메서드 (r, p, s 변환)
 	private static String getRpsImgName(int choice) {
 		return switch (choice) {
 		case 0 -> "r";
@@ -205,6 +222,7 @@ public class RpsMain {
 		private final JLabel lbResult, lbScore;
 		private final Timer timer;
 
+		// 생성자를 통해 각 파라미터의 값을 받아오고 상기에 선언된 변수에 대입
 		public RpsActionListener(int userChoice, JLabel lbUImg, JLabel lbCImg, JLabel lbResult, JLabel lbScore,
 				Timer timer) {
 			this.userChoice = userChoice;
