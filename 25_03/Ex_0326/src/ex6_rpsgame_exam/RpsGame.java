@@ -7,22 +7,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-public class RpsMain {
-	static int userChoice = -1; // 사용자 선택 (0:바위, 1:보, 2:가위) 값을 담을 전역 변수 설정
-	static int computerChoice = -1; // 컴퓨터 선택값을 담을 전역 변수 설정
+public class RpsGame {
+
+	private int userChoice = -1; // 사용자 선택 (0:바위, 1:보, 2:가위) 값을 담을 변수 설정
+	private int computerChoice = -1; // 컴퓨터 선택값을 담을 변수 설정
 
 	// 승/무/패 카운터 변수 추가
-	static int wins = 0; // 승리 횟수 담을 전역 변수 설정
-	static int draws = 0; // 무승부 횟수 담을 전역 변수 설정
-	static int losses = 0; // 패배 횟수 담을 전역 변수 설정
+	private int wins = 0; // 승리 횟수 담을 변수 설정
+	private int draws = 0; // 무승부 횟수 담을 변수 설정
+	private int losses = 0; // 패배 횟수 담을 변수 설정
 
 	public static void main(String[] args) {
+		new RpsGame().startGame();
+	}
+
+	private void startGame() {
 		Frame gameFrame = new Frame("가위 바위 보 게임"); // 가위 바위 보 게임 프레임 생성
 		gameFrame.setLayout(null); // 버튼 및 그림 자동 정렬 해제
 		gameFrame.setBounds(400, 100, 700, 900); // 프레임 크기 및 위치 설정
@@ -108,7 +114,13 @@ public class RpsMain {
 		// - 결과 메시지("가위 바위 보")로 복원
 		// - 애니메이션 타이머 재시작
 		// 파라미터: lbUImg, lbCImg(이미지 레이블), lbResult(결과 표시 레이블), timer(애니메이션 제어 타이머)
-		btnRestart.addActionListener(e -> resetGame(lbUImg, lbCImg, lbResult, timer));
+		btnRestart.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				resetGame(lbUImg, lbCImg, lbResult, timer);
+			}
+		});
 
 		// 프레임에 추가할 객체 컴포넌트 추가
 		gameFrame.add(lbUImg);
@@ -140,10 +152,10 @@ public class RpsMain {
 		buttons[1].addActionListener(new RpsActionListener(1, lbUImg, lbCImg, lbResult, lbScore, timer));
 		// 가위 버튼
 		buttons[2].addActionListener(new RpsActionListener(2, lbUImg, lbCImg, lbResult, lbScore, timer));
-	} // main
+	} // startGame
 
 	// 승패 판정 및 승패 기록 출력 갱신 메서드
-	private static void updateResultAndScore(int userChoice, int computerChoice, JLabel lbResult, JLabel lbScore) {
+	private void updateResultAndScore(int userChoice, int computerChoice, JLabel lbResult, JLabel lbScore) {
 		String result = "";
 		if (userChoice == computerChoice) {
 			result = "무승부!";
@@ -162,7 +174,7 @@ public class RpsMain {
 	}
 
 	// 이미지 배열 생성 메서드
-	private static ImageIcon[] createImageArray(String prefix, String[] rpsImg) {
+	private ImageIcon[] createImageArray(String prefix, String[] rpsImg) {
 		// 이미지 아이콘 클래스 형태의 images 경로를 저장할 image 배열값 할당
 		ImageIcon[] images = new ImageIcon[3];
 		for (int i = 0; i < 3; i++) {
@@ -173,18 +185,17 @@ public class RpsMain {
 	}
 
 	// 버튼 폰트 설정 메서드
-	private static void setButtonFont(JButton btn, Font font) {
+	private void setButtonFont(JButton btn, Font font) {
 		btn.setFont(font);
 	}
 
 	// 레이블 색상 설정 메서드
-	private static void setLabelColor(JLabel label, Color color) {
+	private void setLabelColor(JLabel label, Color color) {
 		label.setForeground(color);
 	}
 
 	// 그림 애니메이션으로 구현 메서드
-	private static int animateImages(int state, JLabel lbUImg, JLabel lbCImg, ImageIcon[] uImages,
-			ImageIcon[] cImages) {
+	private int animateImages(int state, JLabel lbUImg, JLabel lbCImg, ImageIcon[] uImages, ImageIcon[] cImages) {
 		int index = (state - 1) % 3;
 		lbUImg.setIcon(uImages[index]);
 		lbCImg.setIcon(cImages[index]);
@@ -192,7 +203,7 @@ public class RpsMain {
 	}
 
 	// 초기화 메서드
-	private static void resetGame(JLabel lbUImg, JLabel lbCImg, JLabel lbResult, Timer timer) {
+	private void resetGame(JLabel lbUImg, JLabel lbCImg, JLabel lbResult, Timer timer) {
 		userChoice = -1;
 		computerChoice = -1;
 		lbUImg.setIcon(createImageIcon("u", 0)); // 바위로 초기화
@@ -202,12 +213,12 @@ public class RpsMain {
 	}
 
 	// 이미지 경로 생성 메서드
-	private static ImageIcon createImageIcon(String prefix, int choice) {
+	private ImageIcon createImageIcon(String prefix, int choice) {
 		return new ImageIcon("images/" + prefix + getRpsImgName(choice) + ".png");
 	}
 
 	// 이미지 두번째 자리의 파일명 생성 메서드 (r, p, s 변환)
-	private static String getRpsImgName(int choice) {
+	private String getRpsImgName(int choice) {
 		return switch (choice) {
 		case 0 -> "r";
 		case 1 -> "p";
@@ -216,7 +227,7 @@ public class RpsMain {
 	}
 
 	// 새로운 클래스: 버튼 클릭 이벤트 제어자
-	private static class RpsActionListener implements ActionListener {
+	private class RpsActionListener implements ActionListener {
 		private final int userChoice;
 		private final JLabel lbUImg, lbCImg;
 		private final JLabel lbResult, lbScore;
@@ -235,10 +246,11 @@ public class RpsMain {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			RpsMain.userChoice = this.userChoice;
 			lbUImg.setIcon(createImageIcon("u", userChoice));
 
-			computerChoice = (int) (Math.random() * 3);
+
+			// RpsActionListener의 actionPerformed 메서드 내부
+			computerChoice = new Random().nextInt(3);
 			lbCImg.setIcon(createImageIcon("c", computerChoice));
 
 			timer.stop();
