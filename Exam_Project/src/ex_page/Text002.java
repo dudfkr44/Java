@@ -185,7 +185,7 @@ public class Text002
 			quantitySpinner.setValue(1); // 수량 리셋
 			prJLabel.setText(price); // 가격 리셋
 			}
-		});			
+		});
 		//컴포넌트	
 		f.add(quantitySpinner);
 		f.add(prJLabel);	

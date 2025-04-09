@@ -88,7 +88,12 @@ public class Your_Main
 		
         thread = new User_Money_Thread(user, nameLabel);
         thread.start();
-		
+        
+        ImageIcon bgImages = new ImageIcon("image/배경.png");
+        JLabel bgImage = new JLabel(bgImages);
+        bgImage.setBounds(50,125,650,240);
+        
+        		
 		JButton vitamin = new JButton("비타민");
 		vitamin.setBounds(50,370,650,50);
 		vitamin.addActionListener(new ActionListener() 
@@ -136,9 +141,9 @@ public class Your_Main
 			}
 		});
 		
-		JButton sprots = new JButton("스포츠");
-		sprots.setBounds(50,650,650,50);
-		sprots.addActionListener(new ActionListener() 
+		JButton sports = new JButton("스포츠");
+		sports.setBounds(50,650,650,50);
+		sports.addActionListener(new ActionListener() 
 		{
 			@Override
 			public void actionPerformed(ActionEvent e) 
@@ -162,13 +167,14 @@ public class Your_Main
         });
 
         frame.add(easter_egg);
+        frame.add(bgImage);
         frame.add(person_b);
         frame.add(nameLabel);
         frame.add(vitamin);
         frame.add(r);
         frame.add(p);
         frame.add(protein);
-        frame.add(sprots);
+        frame.add(sports);
         frame.add(addMoneyButton);
 		frame.add(easter_egg);
 		frame.add(nameLabel);

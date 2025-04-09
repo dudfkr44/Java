@@ -25,6 +25,5 @@ public class Fruit {
 		this.color = color;
 	}
 	
-	
-	
+
 }

@@ -30,7 +30,7 @@ public class Exercise {
             dialog.setResizable(false);
 
             JLabel msgLabel = new JLabel("", JLabel.CENTER);
-            // 구매 완료 알림과 남은 금액 표시를 위한 줄바꿈 태그, (<br>) 기능을 쓰기 위해 해당 필드르르 html 화
+            // 구매 완료 알림과 남은 금액 표시를 위한 줄바꿈 태그, (<br>) 기능을 쓰기 위해 해당 필드를 html 화
             msgLabel.setText("<html><center>" + message.replace("\n", "<br>") + "</center></html>");
             msgLabel.setFont(new Font("Dialog", Font.BOLD, 15));
             msgLabel.setBounds(0, 30, 300, 60);
