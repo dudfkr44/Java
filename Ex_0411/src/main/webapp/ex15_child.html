@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>(child)자식 선택자</title>
+		<style>
+			/* > 는 직계의 자식 태그만을 설정 */
+			
+			.header > h1{ color: red; }
+			
+		</style>
+	</head>
+	
+	<body>
+		<div class="header">
+			<h1>Child Selector</h1>
+			
+			<div class="nav1">
+				<h1>nav1의 자식</h1>
+			</div>
+			
+			<div class="nav2">
+				<h1>nav2의 자식</h1>
+			</div>
+			
+			<h1>나는 header의 자식</h1>			
+		</div>
+	</body>
+</html>

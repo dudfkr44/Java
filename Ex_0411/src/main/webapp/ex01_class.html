@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Class를 통한 스타일시트 정의</title>
+		<style>
+			div.box h2{color: red;}
+			div.box div.box h2{color: rgb(210, 221, 85)}
+			span{color: gray;}
+			
+			div.box h2 span.span_blue{color: blue;}
+			h2 span.span_green{color: green;}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			<h2><span>클래스</span> 연습</h2>
+			
+			<div class="box">
+				<h2><span class="span_blue">클래스</span> 연습2</h2>	
+			</div>
+		</div>
+		
+		<h2>클래스 <span class="span_green">연습3</span></h2>
+		
+		
+	</body>
+</html>

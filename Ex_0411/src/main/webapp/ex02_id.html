@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ID를 통한 CSS 적용</title>
+		<style>
+			/* [태그#아이디]로 특정 id를 검색 
+			아이디를 구분할 때는 공백을 쓸 필요가 없음 */
+			h1#aa{color: red;}
+			h1#bb{color: blue;}
+		</style>
+	</head>
+	<!-- 하나의 html 페이지에서 중복된 이름의 id를 지정할 수 없다. -->
+	<!-- id 속성은 태그의 양식 수정 및 제어용으로 쓰이며 중복된 id를 가질 수 없음 -->
+	<body>
+		
+		<h1 id="aa">아이디 연습1</h1>
+		<h1 id="bb">아이디 연습2</h1>
+	</body>
+</html>

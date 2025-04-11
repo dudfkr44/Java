@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회사 구성도</title>
+		<style>
+			th{background: blueviolet;}
+			td{text-align: center;}
+			tfoot{background: royalblue;}
+		</style>
+	</head>
+	
+	<body>
+		
+		<table border="1">
+			<caption>회사 직원 정보 테이블</caption>
+			<thead>
+				<tr>
+					<th>부서</th>
+					<th>직원 이름</th>
+					<th>직급</th>
+					<th>월급</th>
+					<th>부서 평균 월급</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2">개발부</td>
+					<td>홍길동</td>
+					<td>팀장</td>
+					<td>5,000,000</td>
+					<td rowspan="2">&#8361;4,500,000</td>
+				</tr>
+				<tr>
+					<td>김철수</td>
+					<td>대리</td>
+					<td>4,000,000</td>
+				</tr>
+				<tr>
+					<td rowspan="2">디자인부</td>
+					<td>박민수</td>
+					<td>팀장</td>
+					<td>5,500,000</td>
+					<td rowspan="2">&#8361;4,000,000</td>
+				</tr>
+				<tr>
+					<td>이영희</td>
+					<td>사원</td>
+					<td>3,500,000</td>
+				</tr>
+				<tr>
+					<td rowspan="2">인사부</td>
+					<td>정우성</td>
+					<td>대리</td>
+					<td>4,200,000</td>
+					<td rowspan="2">&#8361;3,600,000</td>
+				</tr>
+				<tr>
+					<td>최유진</td>
+					<td>사원</td>
+					<td>3,000,000</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4">결과</td>
+					<td>&#8361;12,100,000</td>
+				</tr>
+			</tfoot>
+		</table>
+	
+	</body>
+</html>

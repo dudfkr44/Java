@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>클래스를 활용한 CSS 정의</title>
+		
+		<style>
+			/* [태그명.클래스명]을 통해 원하는 태그의 양식을 변경 가능 */
+			p.msg{color: red;}
+			p.txt{color: rgb(0, 255, 128);}
+			/* style 태그 안에 " " 공백을 넣으면 상위 태그 및 하위 태그를 작성하는 형태 */
+			/* h2 태그 중 class가 msg인 태그만 골라서 속성을 적용 */
+			h2.txt{color: blue;}
+			h1.msg{background: brown;}
+		</style>
+	</head>
+	<!-- class - 태그를 구별하는 식별자 역할
+		 디자인의 편의를 위해서만 사용하는 속성이며,
+		 클래스명이 중복되어도 무방
+		 style 태그에서 개별로 양식을 지정하기 위해
+		 태그에 이름표를 지정하는 속성 -->
+	<body>
+		<h2 class="txt">클래스 연습 중</h2>
+		<p class="msg">오늘은 하루 기네요</p>
+		<p class="txt">다음 중 금요일 UI 평가 있어요</p>
+		<h1 class="msg">머리가 아파요</h1>
+	</body>
+</html>

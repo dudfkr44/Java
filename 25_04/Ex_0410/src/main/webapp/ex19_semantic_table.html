@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>시맨틱 태그를 이용한 테이블 정의</title>
+		<style>
+			th {
+				background: green;
+			}
+
+			td {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<!-- 시맨틱 태그 : 브라우저가 인식할 수 있는 특정한 의미를 가진 태그
+		 테이블의 음성 낭독 기능의 순서를 바꾸려고 할 때 
+		 thead, tbody, tfoot 으로 각 태그를 그룹화한 뒤
+		 순서를 바꾸면 태그 출력은 그대로여도 바뀐 순서대로 음성을 낭독 -->
+
+	<body>
+		<table border="1">
+			<caption>태블릿 PC와 스마트폰의 판매 현황</caption>
+
+			<thead>
+				<tr>
+					<th>구분</th>
+					<th>태블릿 PC</th>
+					<th>스마트폰</th>
+				</tr>
+			</thead>
+
+			<tfoot>
+				<tr>
+					<th>총 판매수</th>
+					<td>5만대</td>
+					<td>16만대</td>
+				</tr>
+			</tfoot>
+
+			<tbody>
+				<tr>
+					<th>상반기 판매수</th>
+					<td>2만대</td>
+					<td>5만대</td>
+				</tr>
+				<tr>
+					<th>하반기 판매수</th>
+					<td>3만대</td>
+					<td>11만대</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</body>
+
+</html>

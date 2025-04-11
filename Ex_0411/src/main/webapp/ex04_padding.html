@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>padding(안쪽 여백)</title>
+		<!-- padding 속성은 border로 만들어진 속성의 여백을 지정 -->
+		<style>
+			p{border: 5px solid red;
+			  background: yellow;}
+			.box1{padding: 20px;}/* 상하좌우 20px 여백 */
+/*			.box2{padding-top: 20px;
+				  padding-bottom: 20px;
+				  padding-left: 50px;
+				  padding-right: 50px;} */
+			.box2{padding:20px 50px;} /* 상하, 좌우 */
+			.box3{padding:20px 50px 30px;} /* 상, 좌우, 하 */
+			.box4{padding:10px 30px 50px 0;}
+			/* 상, 우, 하, 좌(12시 방향(상)부터 시계 방향으로) */
+			/* 단위는 px를 써야 하나 0일 시 px를 생략 가능 */
+		</style>
+	</head>
+	
+	<body>
+		<p class="box1">태그에 padding 적용하기 1</p>
+		<p class="box2">태그에 padding 적용하기 2</p>
+		<p class="box3">태그에 padding 적용하기 3</p>
+		<p class="box4">태그에 padding 적용하기 4</p>
+	</body>
+</html>

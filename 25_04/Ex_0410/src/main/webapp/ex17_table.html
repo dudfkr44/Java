@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>테이블 행열 합치기 예제</title>
+		<style>
+			th{background: cyan;}
+		</style>
+	</head>
+	<body>
+		<caption><h1>행열 합치기</h1></caption>
+		<table border="1">
+			<tr>
+				<th colspan="4">뽀로로 공룡섬 대모험</th>
+			</tr>
+			<tr>
+				<th>구분</th>
+				<th>S석</th>
+				<th>VIP</th>
+				<th>비고</th>
+			</tr>
+			<tr>
+				<td>성인</td>
+				<td>40,000원</td>
+				<td>60,000원</td>
+				<td rowspan="5">
+					<abbr title="뽀로로를 사랑하면 꽁짜">뽀사꽁</abbr>
+				</td>
+			</tr>
+			<tr>
+				<td>청소년</td>
+				<td>30,000원</td>
+				<td>50,000원</td>
+			</tr>
+			<tr>
+				<td>소인</td>
+				<td colspan="2">미취학 아동 일반 요금의 50%</td>
+			</tr>
+			<tr>
+				<td rowspan="2">공연 시간</td>
+				<td>1회</td>
+				<td>13:00 시 ~ 15:00 시</td>
+			</tr>
+			<tr>
+				<td>2회</td>
+				<td>17:00 시 ~ 19:00 시</td>
+			</tr>		
+		</table>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			
+			*{ margin:0; padding: 0; }
+			/* *표시는 body 영역의 자식 태그에 부여하는 양식 속성의 값 */
+			
+			dl{ width:650px;
+				border:5px double gray; 
+				margin:0 auto; }
+				/* margin 속성의 0 auto를 줄 때는 width는 반드시 적용 */				
+			dt{ padding: 15px 0;
+				text-align: center;
+				background: #aaf;
+				border-bottom: 10px solid blue;
+				letter-spacing: 10px; /* 자간 */ }
+			dd{ padding:10px 0; }
+			.line{ border-bottom: 3px dotted black; }
+		</style>
+	</head>
+	
+	<body>
+		<dl>
+			<dt>스타일 연습</dt>
+			<dd class="line">
+				내용1 입니다
+			</dd>
+			<dd>
+				내용2 입니다
+			</dd>
+		</dl>
+	</body>
+</html>
