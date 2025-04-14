@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			
+			.box{ margin: 40px;
+				  width: 250px;
+				  height: 300px;
+				  border: 1px solid red;
+				  position: relative; }
+/* postion: absolute - 브라우저의 좌표 0, 0을 기준으로 모든 태그를 겹쳐 표시 */
+/* 자식 태그에 postion: absolute 속성이 있다면 부모 태그에 position: relative; 속성이 있어야 자식 클래스로 인식함 */
+
+			p{ width: 130px;
+			   height: 80px;
+			   padding: 10px; }
+			
+			.red{ background: red;
+				  position: absolute;
+				  left: 0;
+				  top: 0; }
+			
+			.blue{ background: blue;
+				   position: absolute;
+				   left: 30px;
+				   top: 30px; }
+			
+			.green{ background: green;
+					position: absolute;
+				    right: 0px;
+				    bottom: 0px; }
+		</style>
+		
+	</head>
+	<body>
+		<div class="box">
+			<p class="red">포지션 연습</p>
+			<p class="blue">포지션 연습</p>
+			<p class="green">포지션 연습</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        
+        li { list-style: none; }
+        
+        .menu > li {
+            display: inline-block; /* 인라인 블록으로 변경 */
+            position: relative;    /*_submenu 위치 기준점 */
+        }
+        
+        .menu > li > a {
+            display: block;
+            border: 1px solid black;
+            padding: 10px; /* 너비 직접 지정 필요 없음 */
+        }
+        
+        .submenu {
+            display: none;
+            position: absolute;
+            width: 120px; /* 원하는 너비 설정 */
+            border: 1px solid black;
+            margin-top: 30px; /* 상위 메뉴 아래로 이동 */
+        }
+        
+        .submenu li {
+            width: 100%; /* 전체 너비 차지 */
+        }
+        
+        /* 호버 submenu 표시 */
+        .menu > li:hover .submenu { display: block; }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#" target="_blank">메뉴</a>
+            <ul class="submenu">
+                <li><a href="#" target="_blank">짜장</a></li>
+                <li><a href="#" target="_blank">짬뽕</a></li>
+                <li><a href="#" target="_blank">탕수육</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
