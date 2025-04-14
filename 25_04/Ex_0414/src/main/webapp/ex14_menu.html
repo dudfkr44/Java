@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			*{ margin: 0; padding: 0; }
+			li{ list-style: none; }
+			a{ text-decoration: none; }
+			
+			div.container{ width: 290px;
+						   margin: 10px auto; }
+						   
+			div#menu{ background: #333;
+					  padding: 20px; }
+			
+			div#menu ul li{ display: inline-block;
+							text-align: center;
+							padding: 10px;
+							position: relative; }
+			
+			ul.submenu{ position: absolute;
+						left: 0;
+						width: 100px;
+						background: #444;
+						display: none;
+						padding: 30px 10px; }
+						
+			#menu ul li:hover .submenu{ display: block; }
+			
+			.submenu li a{ color: #fff;
+						   padding: 5px;
+						   display: block; }
+			#menu ul li a{ color: #fff }
+						   
+			.submenu li a:hover{ background: #aaf; }
+         </style>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="menu">
+				<ul>
+				    <li><a href="#" target="_blank">홈</a></li>
+				    <li>
+				        <a href="#" target="_blank">서비스</a>
+				        <ul class="submenu">
+				            <li><a href="#" target="_blank">웹 개발</a></li>
+				            <li><a href="#" target="_blank">앱 개발</a></li>
+				            <li><a href="#" target="_blank">디자인</a></li>
+				        </ul>
+				    </li>
+				    <li><a href="#" target="_blank">소개</a></li>
+				    <li><a href="#" target="_blank">연락처</a></li>
+			    </ul>
+			</div>
+		</div>
+	</body>
 </html>

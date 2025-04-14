@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+			div#container{ border:3px gray solid;
+						   width: 300px; height: 130px;
+						   margin: 20px auto;
+						   position: relative;
+						   background: rgb(255, 255, 128);
+						   padding: 15px; }
+			h2#title{ color: blue;
+					  padding: 15px 5px;
+					  display: inline; }
+			a{ float: right;
+			   color: black;
+			   margin: 7px 10px;
+			   font: bold 15px sans-serif }
+			ul.subtitle{ position: absolute;
+						 left: 30px; top: 50px;
+						 margin: 10px 0; }
+			ul.arrow{ position: absolute;
+					  left: 20px; top: 47px;
+					  margin: 10px 0; }
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<h2 id="title">게시판 제목</h2>
+			<a href="#" target="_blank">더보기</a>
+			<ul class="subtitle">
+				<li class="submenu">최근게시물 제목1</li>
+				<li class="submenu">최근게시물 제목2</li>
+				<li class="submenu">최근게시물 제목3</li>
+				<li class="submenu">최근게시물 제목4</li>
+			</ul>
+			<ul class="arrow">
+				<li><img src="image/arrow.gif" alt="화살"></li>
+				<li><img src="image/arrow.gif" alt="화살"></li>
+				<li><img src="image/arrow.gif" alt="화살"></li>
+				<li><img src="image/arrow.gif" alt="화살"></li>
+			</ul>
+		</div>
+	</body>
+</html>
