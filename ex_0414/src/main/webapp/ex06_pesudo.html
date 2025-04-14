@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>psedo(가상 클래스) :nth-child</title>
+		<style>
+			li:nth-child(odd){ color:red; }
+			li:nth-child(even){ color:green; }
+			li:nth-child(3n){ color:blue; }
+			li:nth-child(6){ background:gold; }
+			/* nth-child() : 특정 순번의 속성을 변경할 때 쓰는 속성 */
+			/* 함수 인자 odd - 홀수 위치, even - 짝수 위치, 숫자n - 숫자의 배수 번째를 지정(예: 3n - 3의 배수)
+			   일반 숫자는 특정 숫자의 위치를 지정 */
+		</style>
+	</head>
+	
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</body>
+</html>

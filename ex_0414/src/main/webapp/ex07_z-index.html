@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>z-index</title>
+		<style>
+			*{ margin: 0; padding: 0; }
+			p{ border: 1px solid black;
+			   width: 80px; height: 80px;
+			   padding: 10px;
+			   position: absolute; }
+			   /* postion: absolute - 브라우저의 좌표 0, 0을 기준으로 모든 태그를 겹쳐 표시 */
+			   /* 위의 속성이 붙은 태그들에 left, right, top, bottom으로 절대 좌표를 지정 */
+			   /* z-index 겹쳐진 태그의 순번대로 가장 위의 표시(가장 작은 숫자가 우선순위 높음) */
+			.box1{ background: yellow;
+				   left: 100px; top: 100px;
+				   z-index: 3; }
+			.box2{ background: orange;
+				   left: 120px; top: 120px;
+				   z-index: 2; }
+			.box3{ background: teal;
+				   left: 140px; top: 140px;
+				   z-index: 1; }
+		</style>
+	</head>
+	
+	<body>
+		<p class="box1">박스1</p>
+		<p class="box2">박스2</p>
+		<p class="box3">박스3</p>
+	</body>
+</html>
