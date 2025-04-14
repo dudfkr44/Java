@@ -2,10 +2,41 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>float(왼쪽 또는 오른쪽 정렬과 관련된 속성)</title>
+		<style>
+			*{ margin: 0; padding: 0; }
+			.container{ width: 500px;
+						margin: 10px auto;
+						background: #fdd;
+						padding: 10px;
+						border: 5px solid #caa;
+						overflow: hidden; }
+						/* 자식 태그가 float 속성이 있다면 overflow: hidden 속성으로 float 자식 태그를 인지시킴 */
+						/* (float의 해제) : 즉 float 속성을 가진 태그를 부모 태그 안에 포함시키는 의미 */
+			h1{ text-align: center; }
+			.green{ width: 200px; height: 100px;
+					background: #dda;
+					float: left; }
+					/* float는 부유한다(부양)는 의미로 공중에 붕 뜬 형태가 됨. 출가한 자식의 개념 */
+					/* 부모 태그에서 float를 해제하여 float 속성의 자식 태그를 인지시킬 필요가 있다. */
+					/* overflow: hidden은 부모 태그에게 float 속성을 가진 자식 태그를 인식시키는 속성 */
+			.coffee{ width: 200px; height: 100px;
+					background: #da7;
+					float: right; }
+		</style>
 	</head>
 	
 	<body>
-		
+		<div class="container">
+			<h1>커피와 녹차</h1>
+			
+			<div class="green">
+				녹차의 효능
+			</div>
+			
+			<div class="coffee">
+				커피의 효능
+			</div>
+		</div>
 	</body>
 </html>
