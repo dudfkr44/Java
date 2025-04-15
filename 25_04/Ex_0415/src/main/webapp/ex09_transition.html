@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			#box{ width: 100px;
+				  height: 100px;
+				  background: red;
+				  border-radius: 0;
+				/* transition-property: 애니메이션을 넣을 속성
+				   transition-duration: 애니메이션 진행 시간
+				   transition-delay: 애니메이션을 시작하는 시간 */
+				  -webkit-transition-property: background, border-radius;
+				  -webkit-transition-duration: 1s;
+				  -webkit-transition-delay: 2s;
+				  
+				  -moz-transition-property: background, border-radius;
+				  -moz-transition-duration: 1s;
+				  -moz-transition-delay: 2s;
+				  
+				  -o-transition-property: background, border-radius;
+				  -o-transition-duration: 1s;
+				  -o-transition-delay: 2s; }
+				  /* -webkit- 크롬 및 사파리 브라우저에 애니메이션을 호환시키는 속성
+				     -moz- mozila firefox 브라우저에 애니메이션을 호환시키는 속성
+				     -o- opera 브라우저에 애니메이션을 호환시키는 속성
+				     -ms- explore 브라우저에 애니메이션을 호환시키는 속성 */
+			#box:hover{ background: blue;
+				  		border-radius: 50px; }
+		</style>
+	</head>
+	
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

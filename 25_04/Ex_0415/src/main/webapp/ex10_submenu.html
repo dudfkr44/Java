@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		
+		<style>
+			#menu{ height: 40px; 
+				   font-size: 16px;
+				   background: #63696b; }
+				   
+			.nav{ background: #63696b;
+				  height: 40px;
+				  width: 1050px;
+				  margin: 0 auto;
+				  position: relative; }
+			
+			.nav li{ float:left; }
+			
+			.nav > li > a{ display: block;
+						   line-height: 40px;
+						   color: #fff;
+						   font-weight: bold;
+						   text-align: center;
+						   padding: 0 26px; }
+						   
+			.nav .sub{ position: absolute;
+					   left:0; top: 40px;
+					   display: none; }
+					   
+			.nav .plus a:hover{ background: #aaf; }
+			
+			.nav > li:hover .sub{ display: block; }
+			
+			.nav > li:hover > a{ background: #4a96de; }
+			
+			.nav .sub li a{ display: block;
+							padding: 0 5px;
+							color: #666; }
+			
+			.nav .sub li a:hover{ color: red; }
+			.nav .sub li a:active{ color: rgb(0, 128, 255); }
+			
+			.nav .sub2 li:first-child{ margin-left: 50px; }
+			.nav .sub3 li:first-child{ margin-left: 100px; }
+			.nav .sub4 li:first-child{ margin-left: 150px; }
+			.nav .sub5 li:first-child{ margin-left: 200px; }
+			.nav .sub6 li:first-child{ margin-left: 250px; }
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="menu">
+			<ul class="nav">
+				<li>
+					<a href="#">개인뱅킹</a>
+					<ul class="sub">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub-->
+				</li>
+				
+				<li>
+					<a href="#">자산관리</a>
+					<ul class="sub sub2">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub sub2-->
+				</li>
+				
+				<li>
+					<a href="#">예금신탁</a>
+					<ul class="sub sub3">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub sub3-->
+				</li>
+				
+				<li>
+					<a href="#">대출</a>
+					<ul class="sub sub4">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub sub4-->
+				</li>
+				
+				<li>
+					<a href="#">펀드</a>
+					<ul class="sub sub5">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub sub5-->
+				</li>
+				
+				<li>
+					<a href="#">외환</a>
+					<ul class="sub sub6">
+						<li><a href="#" target="_blank">조회</a></li>
+						<li><a href="#" target="_blank">이체</a></li>
+						<li><a href="#" target="_blank">신규/해지</a></li>
+						<li><a href="#" target="_blank">공과금/법원</a></li>
+						<li><a href="#" target="_blank">뱅킹보안센터</a></li>
+						<li><a href="#" target="_blank">골드뱅킹</a></li>
+						<li><a href="#" target="_blank">금융서비스</a></li>
+						<li><a href="#" target="_blank">사용자관리</a></li>
+						<li><a href="#" target="_blank">카드/증권</a></li>
+					</ul><!--sub sub6-->
+				</li>
+				
+				<li class="plus"><a href="#" target="_blank">퇴직연금</a></li>
+				<li class="plus"><a href="#" target="_blank">골드</a></li>
+				<li class="plus"><a href="#" target="_blank">보험</a></li>
+				<li class="plus"><a href="#" target="_blank">미션플러스</a></li>
+			</ul><!--nav-->
+			
+		</div><!--menu-->
+	</body>
+</html>

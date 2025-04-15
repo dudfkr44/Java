@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		
+		<style>
+			#main{ width: 960px;
+				   margin: 20px auto;
+				   height: 150px;
+				   position: relative; }
+			
+			#main #hgroup{ position: absolute; left: 270px; top: 10px; }
+			
+			#popmenu table{ position: absolute; left: 0; top: 10px;
+							width: 130px; height: 130px;
+							text-indent: 5px;
+							font: bold 15px sans-serif;
+							background: rgb(43, 55, 147);
+							color: #fff; }
+			
+			#main ul{ overflow: hidden; }
+			
+			#main ul li{ float:left; }
+			
+			
+			/* ---a1 영역--- */
+			#a1{ position: absolute; right: 0; top: 3px; }
+			
+			#a1 ul li{ border-right: 1px solid gray;
+					   border-top: 1px solid gray;
+					   border-bottom: 1px solid gray; }		
+			
+			#a1 ul li:first-child{ border-left: 1px solid gray; }
+			
+			#a1 ul li a{ display: block;
+						 padding: 2px 10px;
+						 color: #666; }
+			
+			#a1 ul li a:hover{ background: #999;
+							   color: #fff; }
+			
+			/* ---a2 영역--- */
+			#a2{ position: absolute; bottom: 0; right: 0; }
+			
+			#a2 ul li{ border-right: 1px solid gray;
+					   border-top: 1px solid gray;
+					   border-bottom: 1px solid gray; }		
+			
+			#a2 ul li:nth-child(1){ border-left: 1px solid gray; }
+			
+			#a2 ul li a{ display: block;
+						 padding: 10px 20px;
+						 color: #666; }
+			
+			#a2 ul li a:hover{ background: rgb(128, 128, 255);
+							   color: #fff; }
+							   
+			/* ---content 영역--- */
+			#content{ width: 960px;
+					  margin: 10px auto;
+					  overflow: hidden; }
+
+			table.content_t{ width: 960px;
+				   			 background: #ffc;
+				   			 margin: 5px auto; }
+			caption{ padding: 10px;
+					 font: bold 20px sans-serif;
+					 margin-top: 5px; }
+			thead{ background: #36f;
+				   border-bottom: 5px solid black;
+				   color: #fff; }
+			.content_th{ width: 100px; height: 30px; padding: 10px 10px; }
+			
+			.content_td{ width: 200px; height: 50px; padding: 30px 0; }
+			
+			.content1{ text-align: center; }
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="popmenu">
+				<table border="1">
+					<tr>
+						<td>COMPANY</td>
+					</tr>
+					<tr>
+						<td>PRODUCT</td>
+					</tr>
+					<tr>
+						<td>CUSTOMER</td>
+					</tr>
+					<tr>
+						<td>COMMUNITY</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="hgroup">
+				<h1>Rint Development</h1>
+				<h2>HTML + CSS</h2>
+			</div>
+			
+			<div id="a1">
+				<ul>
+					<li><a href="#" target="_blank">WEB</a></li>
+					<li><a href="#" target="_blank">MOBILE</a></li>
+					<li><a href="#" target="_blank">GAME</a></li>
+					<li><a href="#" target="_blank">SIMULATION</a></li>
+					<li><a href="#" target="_blank">DATA</a></li>
+				</ul>
+			</div><!-- a1 -->
+			
+			<div id="a2">
+				<ul>
+					<li><a href="#" target="_blank">HTML</a></li>
+					<li><a href="#" target="_blank">CSS3</a></li>
+					<li><a href="#" target="_blank">Java Script</a></li>
+					<li><a href="#" target="_blank">jQuerry</a></li>
+					<li><a href="#" target="_blank">js</a></li>
+				</ul>
+			</div><!-- a2 -->
+		</div><!-- main -->
+		
+		
+		<div class="content">
+			<table class="content_t" border="1">
+				<caption class="title">업종별 모범거래기준 주요 내용 비교</caption>
+				<thead>
+					<tr class="section">
+						<th class="content_th">구분</th>
+						<th class="content_th">제빵(4월)</th>
+						<th class="content_th">피자(7월)</th>
+						<th class="content_th">치킨(7월)</th>
+						<th class="content_th">커피(11월)</th>
+					<tr>
+				</thead>
+				<tr class="content1">
+					<th class="content_th">영업지역</th>
+					<td class="content_td">500m</td>
+					<td class="content_td">1,500m</td>
+					<td class="content_td">800m</td>
+					<td class="content_td">500m</td>
+				</tr>
+				<tr class="content2">
+					<th class="content_th">광고</th>
+					<td class="content_td">&nbsp;&nbsp;관련내용 없음<br>&nbsp;&nbsp;(분쟁없음)</td>
+					<td class="content_td">&nbsp;&nbsp;총 광고비 사전동의<br>&nbsp;&nbsp;광고내역 송부 등</td>
+					<td class="content_td">&nbsp;&nbsp;총 광고비 사전동의<br>&nbsp;&nbsp;광고내역 송부 등</td>
+					<td class="content_td">&nbsp;&nbsp;관련내용 없음<br>&nbsp;&nbsp;(분쟁없음)</td>
+				</tr>
+				<tr class="content3">
+					<th class="content_th">대금지급</th>
+					<td class="content_td">&nbsp;&nbsp;관련내용 없음<br>&nbsp;&nbsp;(분쟁없음)</td>
+					<td class="content_td">&nbsp;&nbsp;관련내용 없음<br>&nbsp;&nbsp;(분쟁없음)</td>
+					<td class="content_td">&nbsp;&nbsp;관련내용 없음</td>
+					<td class="content_td">&nbsp;&nbsp;월 1-2회 정산<br>&nbsp;&nbsp;정산기한 최소 7일 보장</td>
+				</tr>
+			</table>
+		</div><!-- content -->
+	</body>
+</html>

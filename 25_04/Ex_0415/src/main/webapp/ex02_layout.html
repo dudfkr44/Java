@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		
+		<style>
+			#main{ width:960px;
+				   margin: 0 auto;
+				   height: 150px;
+				   position: relative; }
+			
+			#main .hgroup{ position: absolute; left: 5px; top: 10px; }
+			
+			#main ul{ overflow: hidden; }
+			
+			#main ul li{ float:left; }
+			
+			
+			/* ---a1 영역--- */
+			#a1{ position: absolute; right: 0; top: 3px; }
+			
+			#a1 ul li{ border-right: 1px solid gray;
+					   border-top: 1px solid gray;
+					   border-bottom: 1px solid gray; }		
+			
+			#a1 ul li:first-child{ border-left: 1px solid gray; }
+			
+			#a1 ul li a{ display: block;
+						 padding: 2px 10px;
+						 color: #666; }
+			
+			#a1 ul li a:hover{ background: #999;
+							   color: #fff; }
+			
+			/* ---a2 영역--- */
+			#a2{ position: absolute; bottom: 0; right: 0; }
+			
+			#a2 ul li{ border-right: 1px solid gray;
+					   border-top: 1px solid gray;
+					   border-bottom: 1px solid gray; }		
+			
+			#a2 ul li:nth-child(1){ border-left: 1px solid gray; }
+			
+			#a2 ul li a{ display: block;
+						 padding: 10px 20px;
+						 color: #666; }
+			
+			#a2 ul li a:hover{ background: rgb(128, 128, 255);
+							   color: #fff; }
+							   
+			/* ---content 영역--- */
+			#content{ width: 960px;
+					  margin: 10px auto;
+					  overflow: hidden; }
+			
+			.section{ width: 750px; float: left; }
+			
+			.section .article{ margin-bottom: 10px;
+							   padding: 80px 20px;
+							   border: 1px solid #999 }
+			
+			.aside{ width: 180px; float: right; }
+			
+			/* ---footer 영역--- */
+			#footer{ width: 960px;
+					 margin: 30px auto;
+					 text-align: center; }
+			
+		</style>
+	</head>
+	
+	<body>
+		<div id="main">
+			<div id="hgroup">
+				<h1>Rint Development</h1>
+				<h2>HTML + CSS</h2>
+			</div>
+			
+			<div id="a1">
+				<ul>
+					<li><a href="#" target="_blank">WEB</a></li>
+					<li><a href="#" target="_blank">MOBILE</a></li>
+					<li><a href="#" target="_blank">GAME</a></li>
+					<li><a href="#" target="_blank">SIMULATION</a></li>
+					<li><a href="#" target="_blank">DATA</a></li>
+				</ul>
+			</div><!-- a1 -->
+			
+			<div id="a2">
+				<ul>
+					<li><a href="#" target="_blank">HTML</a></li>
+					<li><a href="#" target="_blank">CSS3</a></li>
+					<li><a href="#" target="_blank">Java Script</a></li>
+					<li><a href="#" target="_blank">jQuerry</a></li>
+					<li><a href="#" target="_blank">js</a></li>
+				</ul>
+			</div><!-- a2 -->
+		</div>
+		
+		<div id="content">
+			<div class="section">
+				<div class="article">
+					<h2>Main contents 1</h2>
+					<p>this is main contents</p>
+				</div>
+				
+				<div class="article">
+					<h2>Main contents 2</h2>
+					<p>this is main contents</p>
+				</div>
+				
+				<div class="article">
+					<h2>Main contents 3</h2>
+					<p>this is main contents</p>
+				</div>
+			</div><!-- section -->
+			
+			<div class="aside">
+				<div class="article">
+					<h2>SideContents</h2>
+					<p>i am side</p>
+				</div>
+			</div>
+		</div><!-- content -->
+		
+		<div id="footer">
+			<h3>Website Layout</h3>
+			<p>web&copy;Corp.</p>
+		</div>
+	</body>
+</html>
