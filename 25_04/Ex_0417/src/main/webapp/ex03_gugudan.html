@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>구구단 출력</title>
+		<style>
+			#font{ font: bold 10px sans-serif; }
+			#myD {
+				background: black;
+				color: white;
+				font: bold 23px sans-serif;
+				width: 100%;
+			}
+		</style>
+
+
+		<script>
+
+			function gugu() {
+				let dan = document.getElementById("dan").value.trim();
+
+				let NumberPatt = /^[0-9]{1}$/;
+				if (!NumberPatt.test(dan) || dan <= 1) {
+					alert("1 이상의 한 자리의 양의 정수를 입력하세요.");
+					return;
+				}
+
+				let myT = document.getElementById("myT");
+				let guguHtml = "";
+
+				for (let i = 1; i <= 9; i++) {
+					guguHtml += dan + ' X ' + i + ' = ' + (dan * i) + '<br>';
+				}
+
+				myD.innerHTML = guguHtml;
+			}
+			
+				let b_show = true;
+			function show() {
+				b_show = !b_show;
+				
+				let bs = document.getElementById("btn_show");
+				bs.value = b_show == true ? "숨기기" : "보이기";
+				
+				let myD = document.getElementById("myD");
+				// #disp{ display: none; }
+				myD.style.display = b_show == true ? "block" : "none";
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		단 :	<input id="dan" placeholder="단수 입력" size="5" value="">
+		<input type="button" value="계산하기" onclick="gugu();">
+		<input type="button" value="숨기기" id="btn_show" onclick="show();">
+		<br>
+		<hr>
+		<div id="myD"></div>
+	</body>
+
+</html>

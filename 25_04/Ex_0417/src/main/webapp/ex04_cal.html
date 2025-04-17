@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>계산기</title>
+		<style>
+			div{ width: 200px; 
+				 margin: 0 auto; }
+				 
+			table {
+				border-collapse: collapse;
+				width: 200px;
+			}
+			
+			op_table{ border-bottom: 0; }
+			
+			.op_pos{ padding: 5px 0;
+					 text-align: center; }
+			
+			input { font: bold 10px sans-serif;
+					border-radius: 5px;
+					border-style: none;
+					background: rgb(0, 128, 255);
+					color: #fff; }
+			
+			
+			th { background: #aaf;
+				 width: 40px; }
+
+			td { width: 160px; }
+
+			.editable {
+				border: 1px solid black;
+				padding: 2px;
+				text-indent: 10px;
+			}
+			
+			#disp{ text-indent: 10px; }
+		</style>
+
+
+		<script>
+
+			function cal(opValue) {
+				let number1 = document.getElementById("num1").innerText.trim();
+				let number2 = document.getElementById("num2").innerText.trim();
+
+				let numberPatt = /^[0-9]+$/;
+				if (!numberPatt.test(number1) || number1 < 0 || !numberPatt.test(number2) || number2 < 0) {
+					alert("양의 정수를 입력하세요.");
+					return;
+				}
+
+				let result = "";
+				switch (opValue) {
+					case "+":
+						result = Number(number1) + Number(number2);
+						break;
+					case "-":
+						result = Number(number1) - Number(number2);
+						break;
+					case "×":
+						result = Number(number1) * Number(number2);
+						break;
+					case "÷":
+						let divi = Number(number1) / Number(number2);
+						result = (number2 == 0) ? 0 : divi.toFixed(3);
+						break;
+				}
+				let disp = document.getElementById("disp");
+				disp.innerHTML = result;
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<table id="numInput" border="1">
+				<tr>
+					<th class="n_title">수1</th>
+					<td id="num1" class="editable" contenteditable="true"></td>
+				</tr>
+				<tr>
+					<th class="n_title">수2</th>
+					<td id="num2" class="editable" contenteditable="true"></td>
+				</tr>
+				<tr class="op_table">
+					<td colspan="2" class="op_pos">
+						<input type="button" value="+" onclick="cal('+');">&nbsp;&nbsp;
+						<input type="button" value="-" onclick="cal('-');">&nbsp;&nbsp;
+						<input type="button" value="×" onclick="cal('×');">&nbsp;&nbsp;
+						<input type="button" value="÷" onclick="cal('÷');"><br>
+					</td>
+				</tr>
+				
+				<tr id="result">
+					<th class="n_title">결과</th>
+					<td id="disp"></td>
+				</tr>
+			
+			</table>
+	
+			</table>
+		</div>
+	</body>
+
+</html>

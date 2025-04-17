@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function greet(s, n){
+				alert(s + ", 안녕 디지몬" + n);
+			}
+			
+			function send(){
+				//확인 버튼이 클릭되면 myid 객체를 검색
+				//document.getElementById() body 태그 안에 특정 id로 지정된 id를 찾을 때 사용
+				
+				let test = document.getElementById("myid");
+				let res = test.value;
+				
+				
+				let secondTxt = document.getElementById("result");
+				secondTxt.value = res;
+				
+				let myP = document.getElementById("myP");
+				//태그 안에 지정된 값을 넣을 때는 innerHTML
+				myP.innerHTML = res;
+			}	
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="버튼1" onclick="greet('홍길동', 10);">
+		
+		<br>
+		
+		
+		<input id="myid" placeholder="값을 입력하세요" value="">
+		<input type="button" value="확인" onclick="send();"><br>
+		<input id="result"><br>
+		
+		<p id="myP"/>
+		
+	</body>
+</html>

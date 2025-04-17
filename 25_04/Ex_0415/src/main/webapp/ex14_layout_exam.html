@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		
+		<style>
+			#top{ width: 900px;
+				  overflow: hidden;
+				  margin: 20px auto; }
+				  
+			#side{ width: 200px;
+				   margin: 10px;
+				   float: left; }
+			
+			#side ul{ width: 150px;
+					  margin: 10px 0; }
+			
+			#side ul li a{ display: block;
+						   background: #123456;
+						   margin: 2px 0;
+						   padding: 5px;
+						   color: #fff;
+						   font-weight: bold; }
+			
+			#side ul li a:hover{ background: #aaf;
+								 color: #aaf2f3; }
+			
+			#main{ position: relative;
+				   width: 680px;
+				   height: 150px;
+				   float: left; }
+			
+			#main .hgroup{ position: absolute;
+						  left: 5px; top: 10px; }
+			
+			#main ul{ overflow: hidden; }
+			
+			#main li{ float: left; }
+			
+			#main #a1{ position: absolute;
+					   right: 0; top: 3px; }
+			
+			#main #a1 ul li{ border-width: 1px 1px 1px 0;
+							 border-color: gray;
+							 border-style: solid; }
+			
+			#main #a1 ul li:first-child{ border-left: 1px solid gray; }
+			
+			#main #a1 ul li a{ display: block;
+							   padding: 2px 10px;
+							   color: #666; }
+			
+			#main #a1 ul li a:hover{ background: #999;
+									 color: #fff; }
+			
+			#main #a2{ position: absolute;
+					   right: 0; bottom: 3px; }
+			
+			#main #a2 ul li{ border-width: 1px 1px 1px 0;
+							 border-color: gray;
+							 border-style: solid; }
+			
+			#main #a2 ul li:first-child{ border-left: 1px solid gray; }
+			
+			#main #a2 ul li a{ display: block;
+							   padding: 10px 20px;
+							   color: #666; }
+			
+			#main #a2 ul li a:hover{ background: #aaf;
+									 color: #fff; }
+			
+			table{ width: 900px;
+				   background: #ffc;
+				   margin: 20px auto; }
+			
+			caption{ font: bold 20px "궁서체", sans-serif;
+					 margin-bottom: 10px; }
+			
+			th{ padding: 15px 20px; width: 20%; }
+			
+			thead th{ background: #36f;
+					  color: #fff;
+					  border-bottom: 5px solid black; }
+					  
+			tbody th{ padding: 30px 20px; }
+			
+			td{ padding: 10px; }
+			
+			tbody .content1{ text-align: center; }
+		</style>
+	</head>
+	
+	<body>
+		<div id="top">
+			<div id="side">
+				<ul>
+					<li><a href="#" target="_blank">COMPANY</a></li>
+					<li><a href="#" target="_blank">PRODUCT</a></li>
+					<li><a href="#" target="_blank">CUSTOMER</a></li>
+					<li><a href="#" target="_blank">COMMUNITY</a></li>
+				</ul>
+			</div><!--side-->
+			
+			<div id="main">
+				<div class="hgroup">
+					<h1>Rint Development</h1>
+					<h2>HTML + CSS</h2>
+				</div><!--hgroup-->
+				
+				<div id="a1">
+					<ul>
+						<li><a href="#" target="_blank">Web</a></li>
+						<li><a href="#" target="_blank">Mobile</a></li>
+						<li><a href="#" target="_blank">Game</a></li>
+						<li><a href="#" target="_blank">Simulation</a></li>
+						<li><a href="#" target="_blank">Data</a></li>
+					</ul>
+				</div>
+				
+				<div id="a2">
+					<ul>
+						<li><a href="#" target="_blank">HTML5</a></li>
+						<li><a href="#" target="_blank">CSS3</a></li>
+						<li><a href="#" target="_blank">Java Script</a></li>
+						<li><a href="#" target="_blank">JQuerry</a></li>
+						<li><a href="#" target="_blank">js</a></li>
+					</ul>
+				</div>
+			</div><!--main-->
+		</div><!--top-->
+		
+		<div id="content">
+			<table border="1">
+				<caption class="title">업종별 모범거래기준 주요 내용 비교</caption>
+				<thead>
+					<tr class="section">
+						<th>구분</th>
+						<th>제빵(4월)</th>
+						<th>피자(7월)</th>
+						<th>치킨(7월)</th>
+						<th>커피(11월)</th>
+					<tr>
+				</thead>
+				<tbody>
+					<tr class="content1">
+						<th>영업지역</th>
+						<td>500m</td>
+						<td>1,500m</td>
+						<td>800m</td>
+						<td>500m</td>
+					</tr>
+					<tr class="content2">
+						<th>광고</th>
+						<td>관련내용 없음<br>(분쟁없음)</td>
+						<td>총 광고비 사전동의<br>광고내역 송부 등</td>
+						<td>총 광고비 사전동의<br>광고내역 송부 등</td>
+						<td>관련내용 없음<br>(분쟁없음)</td>
+					</tr>
+					<tr class="content3">
+						<th>대금지급</th>
+						<td>관련내용 없음<br>(분쟁없음)</td>
+						<td>관련내용 없음<br>(분쟁없음)</td>
+						<td>관련내용 없음</td>
+						<td>월 1-2회 정산<br>정산기한 최소 7일 보장</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><!--content-->
+	</body>
+</html>

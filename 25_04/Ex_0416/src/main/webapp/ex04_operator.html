@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let num1 = 10;
+			let num2 = "10";
+			
+			num1++;
+			document.write(num1, '<br>');
+			
+			num2++;
+			document.write(num2 + '<br>');
+			//alert(num2);
+			
+			//자료형을 확인해야 할 때 쓰는 함수 alert()
+			
+			
+			//브라우저 자체에서 입력값을 받는 함수 prompt()
+			
+			//나이가 20살 이상이고, 성별이 여자이면 '합격'
+			//그렇지 않으면 '불합격'으로 출력
+			
+			let gender = prompt("당신의 성별: ");
+			let age = prompt("당신의 나이: ");
+			if(age >= 20 && gender == "여자" || gender == "여성") {
+				document.write("성별: ", gender + '<br>', "나이: ", age, "세", "<br>합격입니다.");
+			} else {
+				document.write("성별: ", gender + '<br>', "나이: ", age, "세", "<br>불합격입니다.");
+			}
+			
+			
+						
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

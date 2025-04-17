@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="css/reset.css"/>
+		
+		<style>
+			*{ text-align: center; }
+		</style>
+		
+		<script>
+			let num = 1;
+			let path = "image/img";
+			
+			function next() {
+				num++;
+				if(num > 7) {
+					num = 1;
+				}
+				//gallery라는 id의 태그를 검색
+				//getElementById는 메서드 안에서만 작동하기에 전역 변수로 선언할 수 없음
+				
+				let myImg = document.getElementById("gallery");
+				myImg.src = path + num + ".jpg";
+			}
+			
+			function prev() {
+				num--;
+				if(num <= 0) {
+					num = 7;
+				}
+				
+				let myImg = document.getElementById("gallery");
+				myImg.src = path + num + ".jpg";
+				
+			}
+			
+			//1초 간격으로 자동으로 next() 메서드 호출
+			setInterval("next()", 1000);
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<a href="#" onclick="prev();">
+				<img src="image/left_btn.png" alt="이전">
+			</a>
+			
+			<img src="image/img1.jpg" id="gallery" alt="갤러리 이미지"
+					 width="300" height="200">
+					 
+			<a href="#" onclick="next();">
+				<img src="image/right_btn.png" alt="다음">
+			</a>
+		
+		</div>
+	</body>
+</html>

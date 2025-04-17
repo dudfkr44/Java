@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>미지의 수 맞히기</title>
+		<style>
+			.red {
+				color: red;
+			}
+		</style>
+		<script>
+			let rnd = Math.floor(Math.random() * 100) + 1;
+			let cnt = 0; // 시도 횟수를 저장할 변수
+
+			function updown() {
+				let numInput = document.getElementById("num");
+				let num = numInput.value.trim();
+
+				let numberPatt = /^[0-9]+$/;
+				if (!numberPatt.test(num) || num < 1 || num > 100) {
+					alert("1에서 100 사이의 수를 입력하세요.");
+					numInput.value = ""; // 입력 필드 비우기
+					numInput.focus(); // 입력 필드에 포커스 주기
+					return;
+				}
+
+				cnt++; // 시도 횟수 증가
+
+				let log = document.getElementById("log");
+				log.innerHTML += num + " ";
+
+				let desc = document.getElementById("desc");
+
+				if (num < rnd) {
+					desc.innerHTML = "<div class='red'>입력받은 값이 너무 작습니다.</div>";
+				} else if (num > rnd) {
+					desc.innerHTML = "<div class='red'>입력받은 값이 너무 큽니다.</div>";
+				} else {
+					desc.innerHTML = "<div>" + cnt + "회 만에 정답입니다!</div>";
+					numInput.disabled = true; // 입력 필드 비활성화
+				}
+
+				numInput.value = ""; // 입력 필드 비우기
+				numInput.focus(); // 입력 필드에 포커스 주기
+			}
+
+			function handleKeyPress(event) {
+				if (event.key === "Enter") {
+					updown();
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<table>
+			<tr>
+				<td>
+					<input id="num" onkeypress="handleKeyPress(event)" value="">&nbsp;&nbsp;
+					<input type="button" onclick="updown();" value="확인">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="log"></td>
+			</tr>
+			<tr>
+				<td id="desc"></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

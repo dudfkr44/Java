@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let a = 10;
+			let b = 3;
+			let result = a + b;
+			//자바 스크립트에서 자료형은 형변환이 필요하지 않음
+			
+			document.write(result, '<br>');
+			
+			result = a / b;
+			
+			//tofixed() - 정해진 값의 소수점까지 표시
+			document.write(result, "<br>");
+			document.write(result.toFixed(2), '<br>');
+			
+			result = a % b;
+			
+			document.write(result, '<br>');
+			
+			result = a > b;
+			document.write(result, '<br>');
+			
+			let num1 = 10;
+			let num2 = "10";
+			result = num1 === num2;
+			document.write(result, '<br>');
+			//=== - 엄격한 비교 연산자로 값 뿐만이 아니라 자료형도 같아야 true로 인식
+			//== - 자료형이 달라도 값이 같다면(예: true == 1, 10 == "10") true로 인식
+			
+			//!= - 같지 않은 값을 비교하는 비교 연산자
+			//!== - 자료형과 값이 같지 않은지 비교하는 엄격한 비교 연산자
+			
+			result = num1 !== num2;
+			document.write(result + '<br>');
+			
+			num1 = 10;
+			num2 = 20;
+			num1 += num2;// num1 = num1 + num2;
+			document.write(num1, '<br>');
+			
+			num1 /= 7;
+			document.write(num1.toFixed(1), "<br>");
+			
+			/*
+			1시간당 사과 5개, 오렌지 10개, 배 3개를 생산한다.
+			하루에 총 생산되는 갯수와 1시간에 몇 개의 과일이 생산되는지를 소수점 1자리까지만 출력. */
+			
+			let apple = 5;
+			let orange = 10;
+			let pear = 3;
+			let sum = apple + orange + pear;
+			let avg = sum / 24;
+			
+			document.write("하루에 생산되는 총 갯수는 ", sum, "개이고, 하루에 시간당 생산되는 평균량은 ", avg.toFixed(1), "개이다.<br>");
+			
+			
+		</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

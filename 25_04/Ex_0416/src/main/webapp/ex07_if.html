@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			//prompt를 통해 값을 받고, if문을 사용해 아래의 결과를 도출
+			
+			//점수 : 58
+			//성적 : F
+			
+			/*
+			90 이상이면 A
+			80 이상이면 B 
+			70 이상이면 C 
+			60 이상이면 D 
+			59 이하이면 F
+			*/
+			
+			let num = prompt("점수: ");
+			let grade = "";
+			
+			if(num <= 100 && num >= 90) {
+				grade = 'A';
+				document.write(num, "점<br>성적: ", grade);
+			} else if(num <= 89 && num >= 80) {
+				grade = 'B';
+				document.write(num, "점<br>성적: ", grade);
+			} else if(num <= 79 && num >= 70) {
+				grade = 'C';
+				document.write(num, "점<br>성적: ", grade);
+			} else if(num <= 69 && num >= 60) {
+				grade = 'D';
+				document.write(num, "점<br>성적: ", grade);
+			} else if(num <= 59 && num >= 0) {
+				grade = 'F';
+				document.write(num, "점<br>성적: ", grade);
+			} else {
+				document.write(num, "점은 존재하지 않는 점수입니다.");
+			}
+			
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

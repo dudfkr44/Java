@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>계산기</title>
+		<script>
+			function send() {
+				let num1 = document.getElementById("num1").value.trim();
+				let num2 = document.getElementById("num2").value.trim();
+				let op = document.getElementById("op").value.trim();
+				let disp = document.getElementById("disp");
+				
+				let regex = /^[0-9]+$/;
+				if (!regex.test(num1) || !regex.test(num2) || num1 === '' || num2 === '') {
+					alert("정수를 입력하세요.");
+					document.getElementById("num1").value = ""; // 입력 필드 비우기
+					document.getElementById("num2").value = ""; // 입력 필드 비우기
+					document.getElementById("num1").focus(); // 입력 필드에 포커스 주기
+					return;
+				}
+				
+				if(op === '') {
+				alert("연산자 선택은 필수입니다.");
+				} else {
+					let num1Value = Number(num1);
+					let num2Value = Number(num2);
+					switch(op) {
+						case "+": disp.innerHTML = "결과 : " + (num1Value + num2Value); break;
+						case "-": disp.innerHTML = "결과 : " + (num1Value - num2Value); break;
+						case "×": disp.innerHTML = "결과 : " + (num1Value * num2Value); break;
+						case "÷": 
+						if (num2Value === 0) {
+							alert("0으로는 나눌 수 없습니다.");
+							return;
+						} else {
+							let res = num1Value / num2Value;
+							//연산 결과 소수점 2자리를 넘어간다면...
+							let isfloatInner =  /^(\d*)[\.]?(\d{1,2})?$/;
+							if (isfloatInner.test(res)) {
+								disp.innerHTML = "결과 : " + res;
+							} else {
+								alert("소수점이 포함되었습니다.");
+								disp.innerHTML = "결과 : " + res.toFixed(2);
+							}
+						}
+						break;
+						
+				}
+			}
+			}
+		</script>
+	</head>
+		
+		
+		
+	<body>
+		<input id="num1" placeholder="정수1"></input>&nbsp;
+		<input id="num2" placeholder="정수2"></input>&nbsp;
+		
+		<select id="op">
+			<option value="">연산자 선택</option>
+			<option value="+">더하기(+)</option>
+			<option value="-">빼기(-)</option>
+			<option value="×">곱하기(×)</option>
+			<option value="÷">나누기(÷)</option>
+		</select>&nbsp;
+		<input type="button" value="실행" onclick="send();">
+		<table><tr><td id="disp"></td></tr></table>
+	</body>
+</html>

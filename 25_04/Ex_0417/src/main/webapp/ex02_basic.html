@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>나이 및 이름 입력</title>
+		
+		<script>
+			function send(){
+				
+				let name = document.getElementById("name").value;
+				let age = document.getElementById("age").value;
+				
+				// 나이를 입력받는 age가 정수 타입인지를 판단
+				let numberPatt = /^[0-9]*$/;
+				if(!numberPatt.test(age.value)) {
+					alert("올바른 나이를 입력하세요.")
+				}
+				
+				let stringPatt = /^[가-힣]*$/;
+				if(!numberPatt.test(age.value)) {
+					alert("올바른 나이를 입력하세요.")
+				}
+				
+				if(name.trim() === '') {
+					alert("이름을 입력하세요.");
+					return;
+				}
+								
+				if(age.trim() === '') {
+					alert("나이를 입력하세요.");
+					return;
+				}
+				
+				
+				
+				
+					
+				alert("이름: " + name + "\n나이: " + age);
+				
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<input id="name" placeholder="이름 입력" value="">
+		<br>
+		<input id="age" placeholder="나이 입력" value="">
+		<br>
+		<input type="button" value="제출" onclick="send();">
+		
+	</body>
+</html>
