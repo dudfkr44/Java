@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			window.onload = function() {
+			//브라우저의 시작과 함께 자동으로 동작하는 함수
+			let myDiv = document.getElementById("my_div");
+			
+			let newDiv = document.createElement("div");
+			newDiv.innerHTML = "안녕?";
+			
+			myDiv.appendChild(newDiv);
+			
+			}
+			
+			function add() {
+				let myDiv = document.getElementById("my_div");
+
+				//새로운 p 태그를 생성
+				let newP = document.createElement("p");
+
+				/*<p>나는 p</p>*/
+				newP.innerHTML = "나는 p";
+				newP.style.color = 'blue';
+
+				//생성된 p태그를 myDiv에 추가
+				myDiv.appendChild(newP);
+			}
+
+		</script>
+
+	</head>
+
+
+
+	<body>
+		<input type="button" value="추가" onclick="add();">
+		<div id="my_div">
+
+		</div>
+
+	</body>
+
+</html>

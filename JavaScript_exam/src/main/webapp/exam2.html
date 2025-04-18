@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 양식</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 600px;
+            background: rgb(230, 230, 230);
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        label {
+            width: 120px;
+            text-align: right;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: #333;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            border-bottom: 2px dotted #ccc;
+            padding: 8px 0;
+            transition: border-bottom 0.3s ease;
+            width: calc(100% - 135px);
+        }
+
+        .input-wrapper:focus-within {
+            border-bottom: 2px dotted rgb(0, 128, 192);
+        }
+
+        .input-wrapper.error-border {
+            border-bottom: 2px dotted red;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 5px 0;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+
+        input:focus {
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        input::placeholder {
+            transition: opacity 0.3s ease;
+            opacity: 0.7;
+        }
+
+        input:focus::placeholder {
+            opacity: 0.3;
+        }
+
+        .email-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            flex-wrap: nowrap;
+        }
+
+        .email-group input {
+            flex: 1;
+            text-align: left;
+            min-width: 120px;
+            padding: 5px 10px;
+        }
+
+        #emailLocal {
+            text-align: right;
+        }
+
+        .at-symbol {
+            margin: 0 5px;
+        }
+
+        button {
+            display: block;
+            width: 250px;
+            margin: 30px auto 0;
+            padding: 15px;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        input::placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        input:focus::placeholder {
+            opacity: 0.7;
+        }
+
+        input:not(:placeholder-shown)::placeholder {
+            opacity: 0 !important;
+        }
+
+        .error {
+            margin-top: 5px;
+            height: 18px;
+            color: red;
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s;
+            width: 100%;
+            text-align: left;
+            padding-left: 135px;
+        }
+
+        .error.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+            const originalPlaceholder = input.placeholder;
+
+            input.addEventListener('focus', () => {
+                input.placeholder = originalPlaceholder;
+            });
+
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.placeholder = '';
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.value !== '') {
+                    input.placeholder = '';
+                    const errorElement = input.closest('.input-wrapper').parentElement.querySelector('.error');
+                    if (errorElement) errorElement.innerText = '';
+                    input.closest('.input-wrapper').classList.remove('error-border');
+                }
+            });
+        });
+
+        function showError(input, message) {
+            const wrapper = input.closest('.form-group');
+            const errorElement = wrapper.querySelector('.error');
+            errorElement.textContent = message;
+            errorElement.classList.add('active');
+            input.closest('.input-wrapper').classList.add('error-border');
+        }
+
+        function hideError(input) {
+            const wrapper = input.closest('.form-group');
+            const errorElement = wrapper.querySelector('.error');
+            errorElement.textContent = '';
+            errorElement.classList.remove('active');
+            input.closest('.input-wrapper').classList.remove('error-border');
+        }
+
+        function validateOnBlur(input, fieldName) {
+            if (input.value.trim() === '') {
+                showError(input, `⚠ 필수 입력 항목입니다!`);
+                input.dataset.warned = 'true';
+            } else {
+                hideError(input);
+                input.dataset.warned = '';
+            }
+        }
+
+        function validateForm() {
+            let valid = true;
+            document.querySelectorAll('.error').forEach(el => {
+                el.innerText = '';
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.input-wrapper').forEach(el => el.classList.remove('error-border'));
+
+            const fields = [
+                {id: 'id', name: '아이디'},
+                {id: 'password', name: '패스워드'},
+                {id: 'passwordConfirm', name: '패스워드 확인'},
+                {id: 'emailLocal', name: '이메일 아이디'},
+                {id: 'emailDomain', name: '이메일 도메인'},
+                {id: 'address', name: '주소'}
+            ];
+
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                if (input && input.value.trim() === '') {
+                    showError(input, `⚠ 필수 입력 항목입니다!`);
+                    valid = false;
+                }
+            });
+
+            const password = document.getElementById('password').value;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,32}$/;
+            if (!passwordRegex.test(password)) {
+                showError(document.getElementById('password'), '⚠ 영문, 숫자, 특수문자 조합 8~32자');
+                valid = false;
+            }
+
+            if (password !== document.getElementById('passwordConfirm').value) {
+                showError(document.getElementById('passwordConfirm'), '⚠ 패스워드가 일치하지 않습니다');
+                valid = false;
+            }
+
+            if (valid) {
+                const email = `${document.getElementById('emailLocal').value}@${document.getElementById('emailDomain').value}`;
+                alert(`🎉 가입 완료!\n이메일: ${email}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <div style="display: flex; width: 100%; align-items: center;">
+                <label for="id">아이디</label>
+                <div class="input-wrapper">
+                    <input type="text" id="id" placeholder="아이디 입력" onblur="validateOnBlur(this, '아이디')">
+                </div>
+            </div>
+            <div class="error" id="idError"></div>
+        </div>
+
+        <div class="form-group">
+            <div style="display: flex; width: 100%; align-items: center;">
+                <label for="password">패스워드</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="영문+숫자+특수문자 8~32자" onblur="validateOnBlur(this, '패스워드')">
+                </div>
+            </div>
+            <div class="error" id="passwordError"></div>
+        </div>
+
+        <div class="form-group">
+            <div style="display: flex; width: 100%; align-items: center;">
+                <label for="passwordConfirm">패스워드 확인</label>
+                <div class="input-wrapper">
+                    <input type="password" id="passwordConfirm" placeholder="패스워드 재입력" onblur="validateOnBlur(this, '패스워드 확인')">
+                </div>
+            </div>
+            <div class="error" id="passwordConfirmError"></div>
+        </div>
+
+        <div class="form-group">
+            <div style="display: flex; width: 100%; align-items: center;">
+                <label for="email">이메일</label>
+                <div class="input-wrapper">
+                    <div class="email-group">
+                        <input type="text" id="emailLocal" placeholder="아이디" onblur="validateOnBlur(this, '이메일 아이디')">
+                        <span class="at-symbol">@</span>
+                        <input type="text" id="emailDomain" placeholder="example.com" onblur="validateOnBlur(this, '이메일 도메인')">
+                    </div>
+                </div>
+            </div>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+            <div style="display: flex; width: 100%; align-items: center;">
+                <label for="address">주소</label>
+                <div class="input-wrapper">
+                    <input type="text" id="address" placeholder="주소 입력" onblur="validateOnBlur(this, '주소')">
+                </div>
+            </div>
+            <div class="error" id="addressError"></div>
+        </div>
+
+        <button onclick="validateForm()">가입하기</button>
+    </div>
+</body>
+</html>

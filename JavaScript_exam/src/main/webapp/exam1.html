@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <script>
+        function validateForm() {
+            const title = document.getElementById("title").value.trim();
+            const content = document.getElementById("content").value.trim();
+            
+            if (title === "") {
+                alert("제목을 입력해야 합니다.");
+                return false;
+            }
+            
+            if (content === "") {
+                alert("내용을 입력해야 합니다.");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+    <style>
+        * { font-family: Arial, sans-serif; }
+
+        #title, #content {
+            width: 200px;
+            text-align: center;
+        }
+
+        #content {
+            height: 200px;
+            vertical-align: middle;
+            resize: none;
+        }
+
+        table {
+            width: 100%;
+            margin: 10px auto;
+        }
+
+        th {
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .post_title {
+            width: 700px;
+        }
+
+        .td_button {
+            width: 50px;
+            height: 40px;
+        }
+
+        .td_button input[type="button"] {
+            padding: 15px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .orange {
+            color: #fff;
+            font: bold 15px sans-serif;
+            background: rgb(255, 98, 98);
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+            display: flex; /* 수평 배치를 위해 flex 사용 */
+            align-items: center; /* 수직 중앙 정렬 */
+            font: bold 15px sans-serif;
+        }
+
+        .form-group label {
+			width: 70px;
+			text-align: center;
+            margin-right: 10px; /* 레이블과 입력 필드 사이 간격 */
+        }
+    </style>
+</head>
+<body>
+    <form action="insert.no" method="POST" onsubmit="return validateForm()">
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <div class="form-group">
+                <label for="title">제목 </label>
+                <input id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="content">내용 </label>
+                <textarea id="content" name="content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="uploadFile">첨부파일</label>
+                <input type="file" id="uploadFile" name="uploadFile">
+            </div>
+            <button type="submit">작성하기</button>
+        </fieldset>
+    </form>
+    <br><hr><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th class="orange">번호</th>
+                <th class="orange" colspan="2">제목</th>
+                <th class="orange">작성자</th>
+                <th class="orange">작성일</th>
+                <th class="orange">조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>9</td>
+                <td class="post_title">공지사항 제목 9</td>
+                <td class="td_button"><a href="#" target="_blank"><input type="button" class="button" value="바로가기"></a></td>
+                <td>user01</td>
+                <td>2021-03-29</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="post_title">공지사항 제목 6</td>
+                <td class="td_button"><a href="#" target="_blank"><input type="button" class="button" value="바로가기"></a></td>
+                <td>answ445</td>
+                <td>2021-03-12</td>
+                <td>67</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="post_title">공지사항 제목 3</td>
+                <td class="td_button"><a href="#" target="_blank"><input type="button" class="button" value="바로가기"></a></td>
+                <td>testg12</td>
+                <td>2021-03-01</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="post_title">공지사항 제목 2</td>
+                <td class="td_button"><a href="#" target="_blank"><input type="button" class="button" value="바로가기"></a></td>
+                <td>palwe3</td>
+                <td>2021-01-02</td>
+                <td>85</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="post_title">공지사항 제목 1</td>
+                <td class="td_button"><a href="#" target="_blank"><input type="button" class="button" value="바로가기"></a></td>
+                <td>xml23</td>
+                <td>2020-12-24</td>
+                <td>124</td>
+            </tr>
+            <tr>
+                <th class="orange" colspan="5">전체 공지사항 갯수</th>
+                <th class="orange">5개</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

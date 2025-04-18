@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function add() {
+				let ul = document.getElementById('ulList');
+				let input = document.getElementById('text');
+				let text = input.value;
+				
+				let li = document.createElement('li');
+				li.innerHTML = text;
+				
+				let delBtn = document.createElement('input');
+				delBtn.value = '삭제';
+				delBtn.type = 'button';
+				delBtn.onclick = function() {
+					del(li);
+				}
+				
+				input.value = '';
+				input.focus();
+				
+				
+				li.appendChild(delBtn);
+				ul.appendChild(li);
+			}
+			
+			function del(li) {
+				li.remove();
+			}
+		</script>
+	</head>
+
+	<body>
+		<h2>할 일 목록</h2>
+		<input id="text" value=""><input type="button" id="addBtn" value="추가" onclick="add();">
+		<ul id="ulList"></ul>
+	</body>
+
+</html>

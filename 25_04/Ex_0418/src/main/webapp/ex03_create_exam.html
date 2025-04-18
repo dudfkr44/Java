@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function add() {
+				let input = document.getElementById("todoInput");
+				let addBtn = document.getElementById("addBtn");
+				let todoUl = document.getElementById("todoUl")
+
+				//입력값을 저장할 변수
+				let text = input.value;
+
+				//li 태그를 생성시킬 변수
+				let li = document.createElement("li");
+				li.innerHTML = text;
+
+				//삭제 버튼 생성
+				let delBtn = document.createElement('input');
+				delBtn.type = 'button';
+				delBtn.value = '삭제';
+
+				//동적으로 생성된 delBtin에게 클릭을 감지하는 함수 연결
+				delBtn.onclick = function() {
+					del(li);
+				}
+
+				//li에 삭제 버튼을 담음
+				li.appendChild(delBtn);
+
+				//위에서 생성한 li를 담음
+				todoUl.appendChild(li);
+
+				input.value = '';
+				input.focus();
+
+			} //add
+			
+			function del(li) {
+				//파라미터로 넘어온 태그를 제거
+				li.remove();
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<h2>할 일 목록</h2>
+		<input id="todoInput">
+		<input type="button" id="addBtn" value="추가" onclick="add();">
+
+		<ul id="todoUl">
+
+		</ul>
+	</body>
+
+</html>

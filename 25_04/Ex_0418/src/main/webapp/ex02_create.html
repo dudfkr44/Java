@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		selectDan {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input {
+			margin-top: 10px;
+			display: block;
+		}
+	</style>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			window.onload = function () {
+				let selectDan = document.getElementById("selectDan");
+
+				for (let i = 2; i <= 9; i++) {
+					let newOp = document.createElement("option");
+					newOp.value = i;
+					newOp.text = i + "단";
+					selectDan.appendChild(newOp);
+				}
+			}
+
+			function send() {
+				let result = document.getElementById("result");
+				let danNum = selectDan.value;
+				for (let multi = 1; multi <= 9; multi++) {
+					result.innerHTML += danNum + " X " + multi + " = " + (danNum * multi) + "<br>";
+				}
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<select id="selectDan">
+
+		</select>
+		<input type="button" value="확인" onclick="send();">
+		<br>
+		<div id="result"></div>
+	</body>
+
+</html>
