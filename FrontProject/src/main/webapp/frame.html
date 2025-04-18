@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Full Background</title>
+		<style>
+			/* 핵심 설정 */
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			#container {
+				background: url(image/backgroundImage.png) no-repeat center center fixed;
+				/* 중앙 정렬 + 고정 */
+				background-size: cover;
+				/* 중요! 화면에 꽉 차게 조정 */
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+		</div>
+	</body>
+
+</html>
