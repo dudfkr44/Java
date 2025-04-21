@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+		
+		window.onload = function() {
+			let colorbox = document.getElementById('colorbox');
+            let select = document.getElementById('c_select');
+            let line = document.getElementById('line');
+            line.style.width = '200px';
+            line.style.marginLeft = '0';
+            colorbox.innerHTML = 'black';
+			colorbox.style.textAlign = 'center';
+			colorbox.style.background = 'black';
+            colorbox.style.width = '200px';
+            colorbox.style.padding = '90px 0';
+        };
+		
+		
+        function changeBack() {
+			let colorbox = document.getElementById('colorbox');
+            let select = document.getElementById('c_select');
+            let selectedOption = select.options[select.selectedIndex].textContent;
+            
+            let selectedValue = select.value;
+            
+            colorbox.style.color = '#fff';
+			
+			if(selectedValue !== '') {
+				colorbox.style.background = selectedValue;
+				colorbox.innerHTML = selectedOption;
+			} else {
+				colorbox.style.background = '#000';
+				colorbox.innerHTML = '검정';
+			}
+			
+			if(selectedValue === 'yellow') {
+				colorbox.style.color = 'black';
+			}
+            
+        }
+    </script>
+    
+</head>
+<body>
+    <h2>색상 선택</h2>
+    <select id="c_select" onchange="changeBack();">
+        <option value="">::: 색상 선택 :::</option>
+        <option value="red">빨강</option>
+        <option value="blue">파랑</option>
+        <option value="green">초록</option>
+        <option value="yellow">노랑</option>
+    </select>
+    <hr id="line">
+    <div id="colorbox"></div>
+</body>
+</html>

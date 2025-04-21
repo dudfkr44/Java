@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function checkInput() {
+				let id = document.getElementById('txt');
+				let txt_sub = document.getElementById('txt_sub');
+
+
+
+				if (id.value.trim() === '') {
+					txt_sub.innerHTML = '아이디는 한글자 이상 입력하세요.';
+				} else {
+					txt_sub.innerHTML = '';
+				}
+
+				console.log(id.value);
+
+			}
+			
+			function checkChange() {
+				alert("txt2에서 커서가 옮겨졌어요.");
+			}
+
+			/* select(드롭다운)의 변경을 감지 */
+			function changeSel() {
+				let sel = document.getElementById('m_select');
+				
+				if(sel.value !== '') {
+					alert(sel.value);
+				}				
+			}
+			
+			function clearSel() {
+				let sel = document.getElementById('m_select');
+				
+				sel.innerHTML = '';				
+			}
+		</script>
+	</head>
+
+	<body>
+		<!-- oninput 속성은 입력상자(input) 값이 변경될 때마다 감지하는 함수 -->
+		<input id="txt" placeholder="Input Your Id" oninput="checkInput();">
+
+		<!-- onchange 속성은 입력상자(input)에서 커서가 다른 곳으로 이동했을 때를 감지하는 함수 -->
+		<input id="txt2" placeholder="Input Your Text" onchange="checkChange();">
+		<div id="txt_sub">아이디는 한글자 이상 입력하세요.</div>
+
+		<hr>
+
+		<select id="m_select" onchange="changeSel();">
+
+			<option value="">메뉴 선택</option>
+			<option value="1">나는 1입니다.</option>
+			<option value="2">나는 2입니다.</option>
+		</select>
+		
+		
+		<input type="button" value="메뉴 초기화" onclick="clearSel();">
+		
+	</body>
+
+</html>

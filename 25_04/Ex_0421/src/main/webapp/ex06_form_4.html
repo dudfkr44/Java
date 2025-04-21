@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그의 값 전달 방법 4</title>
+		<script>
+			function send(f) {
+				f.submit();
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action="abc.jsp" method="get">
+			
+			<input name="name" placeholder="Input Your Name"><br>
+			<input name="age" placeholder="Input Your Age"><br>
+			
+			<!-- this.form은 자신(button)을 소유하고 있는 form 태그를 의미 -->
+			<!-- this 키워드는 form 태그 및 value 속성 외에는 쓸 수 없음 -->
+			<input type="button" value="값 전달 4" onclick="send(this.form);">
+		</form>
+	</body>
+
+</html>

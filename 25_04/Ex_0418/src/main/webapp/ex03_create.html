@@ -7,22 +7,20 @@
 		<script>
 			function add() {
 				let ul = document.getElementById('ulList');
-				let input = document.getElementById('text');
-				let text = input.value;
-				
 				let li = document.createElement('li');
-				li.innerHTML = text;
+				let input = document.getElementById('text');
+				li.innerHTML = input.value;
 				
 				let delBtn = document.createElement('input');
-				delBtn.value = '삭제';
 				delBtn.type = 'button';
+				delBtn.value = '삭제';
+				
 				delBtn.onclick = function() {
 					del(li);
 				}
 				
 				input.value = '';
 				input.focus();
-				
 				
 				li.appendChild(delBtn);
 				ul.appendChild(li);

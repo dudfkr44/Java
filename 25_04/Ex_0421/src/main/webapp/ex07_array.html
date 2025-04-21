@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			let sido = ['서울', '대전', '대구', '부산'];
+
+			window.onload = function () {
+				let sido_select = document.getElementById('sido');
+
+				let defaultOption = document.createElement('option');
+				defaultOption.innerHTML = ':::지역을 선택하세요:::';
+				sido_select.appendChild(defaultOption);
+
+				for (let i = 0; i < sido.length; i++) {
+					let option = document.createElement('option');
+					option.innerHTML = sido[i];
+					option.value = sido[i];
+					sido_select.appendChild(option);
+				}
+
+				let year = document.getElementById('year');
+				let month = document.getElementById('month');
+
+				for (let i = 1970; i <= 2025; i++) {
+					let option = document.createElement('option');
+					option.innerHTML = i + '년';
+					option.value = i;
+					year.appendChild(option);
+				}
+
+				for (let i = 1; i <= 12; i++) {
+					let option = document.createElement('option');
+					option.innerHTML = i + '월';
+					option.value = i;
+					month.appendChild(option);
+				}
+
+			};
+
+			let dayCount = 30;
+
+			function changeDays() {
+				let year = document.getElementById('year');
+				let month = document.getElementById('month');
+				let selectedYear = Number(year.value);
+				let selectedMonth = Number(month.value);
+				day.innerHTML = '';
+
+				switch (selectedMonth) {
+					case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+						dayCount = 31;
+						break;
+					case 2:
+						dayCount = (selectedYear % 4 === 0 && selectedYear % 100 !== 0) || selectedYear % 400 === 0 ? 29 : 28;
+						break;
+					default:
+						dayCount = 30;
+				}
+
+				for (let i = 1; i <= dayCount; i++) {
+					let option = document.createElement('option');
+					option.textContent = i + '일';
+					option.value = i;
+					day.appendChild(option);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<label for="sido">지역: </label>
+		<select id="sido"></select>
+		<br>
+		<label for="year">생년월일(1970~2025):</label>
+		<select id="year">
+			<option value="">년</option>
+		</select>
+		<select id="month" onchange="changeDays();">
+			<option value="">월</option>
+		</select>
+		<select id="day">
+			<option value="">일</option>
+		</select>
+	</body>
+
+</html>

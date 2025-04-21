@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그의 값 전달 방법 3</title>
+		<script>
+			function send() {
+				let f = document.getElementById('ff');
+				
+				let area = f.myself.value;
+				
+				if(area === '') {
+					alert("자기 소개란은 필수 입력입니다.")
+					return;
+				}
+				
+				f.submit();				
+			}
+		</script>
+	</head>
+
+	<body>
+		<form id="ff" action="aaa.jsp" method="get">
+			<div><input name="m_name" placeholder="Input Your Name"></div>
+			<div><textarea name="myself"></textarea></div>
+			<!-- textarea 태그의 문자값을 가져오려면 value 속성으로 가져와야 함 -->
+			<input type="button" value="값 전달 3" onclick="send();">
+		</form>
+	</body>
+
+</html>

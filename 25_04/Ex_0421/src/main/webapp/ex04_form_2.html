@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그의 값 전달 방법 2</title>
+		<script>
+			function send() {
+				//name 속성이 ff인 form 태그를 검색
+				let f = document.ff;
+				let name = f.m_name.value;
+				if(name === '') {
+					alert("이름을 반드시 입력하세요.");
+					return;
+				}
+				
+				f.submit();
+			}
+		</script>
+	</head>
+
+	<body>
+		<form name="ff" action="login.jsp" method="get">
+			<div>이름: <input name="m_name"></div>
+			<div>
+				혈액형:
+				<select name="sel">
+					<option value="A">A형</option>
+					<option value="B">B형</option>
+					<option value="O">O형</option>
+					<option value="AB">AB형</option>
+				</select>
+			</div>
+			
+			<input type="button" value="값 전달 2" onclick="send();">
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그의 값 전달 방법 1</title>
+		<script>
+			function send() {
+				//body의 form 태그 가져오기
+				//body에 form이 여러 개 있을 경우, 0 1 2 등의 index로 구별.
+				let f = document.forms[0];
+				
+				let age = f.my_age.value;
+				let id = f.my_id.value;
+				let pwd = f.pwd.value;
+				
+				if(age === '') {
+					alert("나이는 필수 입력입니다.");
+					return;
+				}
+				
+				if(id === '') {
+					alert("id는 필수 입력입니다.");
+					return;
+				}
+				
+				if(pwd === '') {
+					alert("비밀번호는 필수 입력입니다.");
+					return;
+				}
+				
+				//method(전송 방식):
+				//get 속성은 form 태그의 파라미터를 (url)주소값에 노출시켜 전달(속도가 빠름, 보안성 취약)
+				//post 속성은 form 태그의 파라미터를 (url)주소값에 숨겨서 전달(속도가 느림, 보안성 이점)
+				f.method = "post";
+				
+				
+				
+				//action: form 태그의 파라미터를 가지고 이동할 페이지를 지정하는 속성
+				f.action = "login.jsp";
+				
+				//submit(): form 태그의 파라미터를 가지고 이동하는 실제로 화면을 전환하는 메서드
+				f.submit();
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action="abc.jsp">
+			
+			<!-- form 태그 안에 있는 자식 요소는 input, select, textarea 태그이며
+			 그 외에는 name 속성을 쓸 수 없다. -->
+			<div name="mDiv">안녕하세요</div>
+			
+			<table border="1">
+				<tr>
+					<th>나이</th>
+					<td><input name="my_age"></td>
+				</tr>
+				
+				<tr>
+					<th>아이디</th>
+					<td><input name="my_id"></td>
+				</tr>
+				
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="password" name="pwd"></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value="값 전달 1" onclick="send();">
+						<input type="submit" value="전달">
+					</td>
+				</tr>
+			</table>			
+			
+		</form>
+	</body>
+
+</html>
