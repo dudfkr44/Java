@@ -31,3 +31,33 @@ where first_name like '__a%';
 select employee_id, first_name
 from EMPLOYEES
 where first_name like '___a__';
+
+-- 이름의 시작은 S, 끝은 n인 사원의 이름을 출력
+select first_name from EMPLOYEES
+where first_name like 'S%n';
+
+-- 이름의 시작은 H, 여섯글자 이상인 사원의 사번, 이름을 출력
+select employee_id, first_name
+from EMPLOYEES
+where first_name like 'H_____%';
+
+-- 2005년도에 입사한 사원들의 사원의 사번, 이름, 입사일을 출력
+select employee_id, first_name, hire_date
+from EMPLOYEES
+where hire_date like '05%';
+-- like 연산자 사용 시 연도는 뒤에 두 글자만 입력
+
+-- 이름에 o가 포함되어 있으면서 a로 끝나는 사원들의 이름, 입사일을 출력
+select first_name, hire_date
+from EMPLOYEES
+where first_name like '%o%a';
+
+-- 전화번호가 011로 시작하지 않는 사원들의 이름, 전화번호를 출력
+select first_name, phone_number
+from EMPLOYEES
+where phone_number not like '011%';
+
+-- 직종에 SA, IT가 포함되어 있지 않는 사원들의 사번, 이름, 직종을 출력
+select employee_id, first_name, job_id
+from EMPLOYEES
+where job_id not like '%SA%' and job_id not like '%IT%';

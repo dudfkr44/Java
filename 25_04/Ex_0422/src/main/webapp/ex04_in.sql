@@ -17,3 +17,8 @@ where employee_id in (100, 102, 104, 106);
 select first_name, salary
 from EMPLOYEES
 where salary in(2200, 3200, 5000, 6800);
+
+--부서 번호가 80이 아닌 사원들의 사번, 이름, 부서번호를 출력
+select employee_id, first_name, department_id
+from EMPLOYEES
+where department_id not in(80);
