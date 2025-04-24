@@ -5,7 +5,7 @@ from EMPLOYEES
 where department_id in (80, 90)
 order by department_id, salary;
 
---distinct 중복 제거하는 키워드(select 다음으로 입력)(인자의 정보가 완전히 같은 자원 중 하나만 출력)
+--distinct 중복 제거하는 키워드(인자의 정보가 완전히 같은 자원 중 하나만 출력)
 --union 중복 제거하는 키워드(두개의 다른 sql문을 연결하는 역할)(오름차순을 정렬하는 기능 포함)
 
 select department_id, salary
