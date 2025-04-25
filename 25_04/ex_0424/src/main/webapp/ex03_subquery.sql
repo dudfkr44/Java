@@ -129,3 +129,52 @@ order by job_id;
 select department_id, min(salary) from EMPLOYEES
 having min(salary) > (select min(salary) from EMPLOYEES where department_id = '100')
 group by department_id;
+
+--성에 Bat가 포함되어 있는 사원과 같은 부서에 근무하는 사원들의 전체 정보를 입력
+select * from EMPLOYEES
+where department_id = (
+    select department_id 
+    from EMPLOYEES 
+    where lower(last_name) like '%bat%'
+);
+
+--직종이 AD_PRES인 사원의 부하직원을 검색하여
+--이름, 직종, 매니저 번호를 출력
+select first_name, job_id, manager_id from EMPLOYEES
+where manager_id in (select employee_id from EMPLOYEES where job_id = 'AD_PRES');
+
+--직종이 ST_CLERK인 Julia와 같은 부서, 같은 직종으로 근무하는
+--사원들 중에서 Mattew를 상사로 두고 있는 사원들의 사번, 이름, 직종, 상사 번호를 출력
+SELECT employee_id, first_name, job_id, manager_id
+FROM EMPLOYEES
+WHERE 
+    department_id = (
+        SELECT department_id 
+        FROM EMPLOYEES 
+        WHERE first_name = 'Julia' AND job_id = 'ST_CLERK'
+    )
+    AND job_id = (
+        SELECT job_id 
+        FROM EMPLOYEES 
+        WHERE first_name = 'Julia' AND job_id = 'ST_CLERK'
+    )
+    AND manager_id = (
+        SELECT employee_id 
+        FROM EMPLOYEES 
+        WHERE first_name = 'Matthew'
+    );
+	
+
+--직종이 ST_CLERK인 Julia와 같은 부서, 같은 직종으로 근무하는
+--사원들 중에서 Mattew를 상사로 두고 있는 사원들의 사번, 이름, 직종, 상사 번호를 출력
+select employee_id, first_name, job_id, manager_id from EMPLOYEES
+where
+	department_id =
+	(select department_id from EMPLOYEES where job_id = 'ST_CLERK' and first_name = 'Julia')
+	and job_id =
+	(select job_id from EMPLOYEES where job_id = 'ST_CLERK' and first_name = 'Julia')
+	and manager_id =
+	(select employee_id from EMPLOYEES where first_name = 'Matthew');
+	
+
+
