@@ -92,7 +92,7 @@ join LOCATIONS l on d.location_id = l.location_id
 where l.city = 'Seattle';
 
 --COUNTRIES, REGION 테이블을 조회해
---국가명(country_name), 대륙명(REGION_name)
+--국가명(country_name), 대륙명(region_name)
 select c.country_name, r.region_name
 from COUNTRIES c, REGIONS r
 where c.region_id = r.region_id;
